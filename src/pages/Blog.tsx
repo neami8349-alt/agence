@@ -71,15 +71,15 @@ const Blog = () => {
         <div className="mx-auto" style={{ padding: "0 calc(18vw - 10rem)" }}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="font-sans text-[3.4rem] font-extrabold text-[hsl(var(--editorial-text))] md:text-[4.2rem] md:leading-[1.1] lg:text-[6rem] lg:leading-[1]">
+              <h1 className="font-sans text-[3.4rem] font-semibold text-[hsl(var(--editorial-text))] md:text-[4.2rem] md:leading-[1.1] lg:text-[6rem] lg:leading-[1]">
                 {featuredArticle.title}
               </h1>
-              <p className="text-lg text-[hsl(var(--editorial-text-light))] leading-relaxed">
+              <p className="text-[1.8rem] text-[hsl(var(--editorial-text-light))] leading-relaxed">
                 {featuredArticle.description}
               </p>
               <Link
                 to={`/article/${featuredArticle.slug}`}
-                className="inline-flex items-center text-lg font-medium text-primary hover:underline group"
+                className="inline-flex items-center text-[1.8rem] font-medium text-primary hover:underline group"
               >
                 Read Story
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
