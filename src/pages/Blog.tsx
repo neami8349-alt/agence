@@ -6,6 +6,10 @@ import heroImage from "@/assets/hero-creative-tech.jpg";
 import designSystemsImage from "@/assets/design-systems.jpg";
 import storytellingImage from "@/assets/storytelling.jpg";
 import sustainableDevImage from "@/assets/sustainable-dev.jpg";
+import avatar1 from "@/assets/avatar-1.jpg";
+import avatar2 from "@/assets/avatar-2.jpg";
+import avatar3 from "@/assets/avatar-3.jpg";
+import avatar4 from "@/assets/avatar-4.jpg";
 
 const Blog = () => {
   const articlesRef = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -61,6 +65,33 @@ const Blog = () => {
       tag: "Innovation",
       slug: "sustainable-development",
     },
+  ];
+
+  const opinions = [
+    {
+      title: "Why Design Thinking Matters More Than Ever",
+      avatar: avatar1,
+      author: "Emma Thompson",
+      slug: "design-thinking-matters"
+    },
+    {
+      title: "The Hidden Cost of Technical Debt",
+      avatar: avatar2,
+      author: "Marcus Chen",
+      slug: "technical-debt-cost"
+    },
+    {
+      title: "Rethinking User Privacy in 2024",
+      avatar: avatar3,
+      author: "Sofia Rodriguez",
+      slug: "rethinking-user-privacy"
+    },
+    {
+      title: "The Future of Remote Collaboration",
+      avatar: avatar4,
+      author: "James Wilson",
+      slug: "remote-collaboration-future"
+    }
   ];
 
   return (
@@ -123,6 +154,55 @@ const Blog = () => {
                     {article.title}
                   </h2>
                   <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">{article.description}</p>
+                </article>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Opinions Section */}
+      <section className="pt-0 pb-16">
+        <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
+          <h2 
+            className="text-[hsl(var(--editorial-text))]"
+            style={{
+              width: "100%",
+              marginBottom: "3rem",
+              padding: "1rem 0",
+              textAlign: "left",
+              letterSpacing: "0.2rem",
+              textTransform: "uppercase",
+              borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
+              fontSize: "1.6rem",
+              fontWeight: 600,
+              lineHeight: 1.5
+            }}
+          >
+            Opinions
+          </h2>
+          <div style={{ display: "flex", gap: "3rem" }}>
+            {opinions.map((opinion, index) => (
+              <Link
+                key={index}
+                to={`/article/${opinion.slug}`}
+                ref={(el) => (articlesRef.current[articles.length + index] = el)}
+                className="group blog-feed__item"
+                style={{
+                  flex: "0 0 calc(25% - 2.25rem)",
+                }}
+              >
+                <article className="h-full">
+                  <div className="relative w-[60px] h-[60px] rounded-full overflow-hidden bg-muted mb-4 mx-auto">
+                    <img
+                      src={opinion.avatar}
+                      alt={opinion.author}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] text-center group-hover:text-primary transition-colors">
+                    {opinion.title}
+                  </h2>
                 </article>
               </Link>
             ))}
