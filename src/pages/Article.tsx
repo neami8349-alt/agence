@@ -173,17 +173,20 @@ const Article = () => {
       </div>
 
       {/* Related Articles */}
-      <section className="py-16">
-        <div className="mx-auto" style={{ maxWidth: '1020px', padding: '0 2rem' }}>
+      <section className="pt-0 pb-16">
+        <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
           <h2 className="font-sans text-3xl font-bold text-[hsl(var(--editorial-text))] mb-8">
             Related Stories
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="flex gap-[4.347826087%]">
             {relatedArticles.map((article, index) => (
               <Link
                 key={index}
                 to={`/article/${article.slug}`}
                 className="group"
+                style={{
+                  flex: "0 0 30.434783%",
+                }}
               >
                 <article>
                   <div className="relative aspect-[16/10] rounded-[10px] overflow-hidden bg-muted mb-4">
