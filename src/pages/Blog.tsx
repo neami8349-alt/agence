@@ -381,7 +381,7 @@ const Blog = () => {
             className="flex gap-4 mb-8 flex-wrap bg-background py-4 -mx-[calc(18vw-10rem)] px-[calc(18vw-10rem)]"
             style={{
               position: "sticky",
-              top: "80px",
+              top: "72px",
               zIndex: 10,
             }}
           >
