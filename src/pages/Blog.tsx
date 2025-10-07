@@ -15,12 +15,12 @@ const Blog = () => {
   const articlesRef = useRef<(HTMLAnchorElement | null)[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
-  const categoryColors: Record<string, { bg: string; text: string }> = {
-    "All": { bg: "#000000", text: "#ffffff" },
-    "Design": { bg: "#009aff", text: "#ffffff" },
-    "Development": { bg: "#32d158", text: "#ffffff" },
-    "Innovation": { bg: "#5e5ce6", text: "#ffffff" },
-    "Content": { bg: "#ff3037", text: "#ffffff" }
+  const categoryColors: Record<string, { bg: string; text: string; bgOpacity: string }> = {
+    "All": { bg: "#000000", text: "#000000", bgOpacity: "rgba(0, 0, 0, 0.18)" },
+    "Design": { bg: "#009aff", text: "#009aff", bgOpacity: "rgba(0, 154, 255, 0.18)" },
+    "Development": { bg: "#32d158", text: "#32d158", bgOpacity: "rgba(50, 209, 88, 0.18)" },
+    "Innovation": { bg: "#5e5ce6", text: "#5e5ce6", bgOpacity: "rgba(94, 92, 230, 0.18)" },
+    "Content": { bg: "#ff3037", text: "#ff3037", bgOpacity: "rgba(255, 48, 55, 0.18)" }
   };
 
   useEffect(() => {
@@ -409,7 +409,7 @@ const Blog = () => {
                   borderRadius: "0.6rem",
                   textDecoration: "none",
                   fontSize: "1.6rem",
-                  backgroundColor: selectedCategory === category ? categoryColors[category].bg : "transparent",
+                  backgroundColor: selectedCategory === category ? categoryColors[category].bgOpacity : "transparent",
                   color: selectedCategory === category ? categoryColors[category].text : "hsl(var(--foreground))",
                 }}
               >
