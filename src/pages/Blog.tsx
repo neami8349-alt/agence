@@ -20,7 +20,7 @@ const Blog = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.5 }
     );
 
     articlesRef.current.forEach((article) => {
