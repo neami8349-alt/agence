@@ -407,13 +407,14 @@ const Blog = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className="font-medium uppercase tracking-wide transition-colors"
+                className="uppercase tracking-wide transition-colors"
                 style={{
                   display: "block",
                   padding: "0.5rem 1rem",
                   borderRadius: "0.6rem",
                   textDecoration: "none",
                   fontSize: "1.6rem",
+                  fontWeight: selectedCategory === category ? 400 : 500,
                   backgroundColor: selectedCategory === category ? selectedCategoryStyle.bg : "transparent",
                   color: selectedCategory === category ? selectedCategoryStyle.text : "hsl(var(--foreground))",
                 }}
