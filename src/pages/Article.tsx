@@ -186,17 +186,17 @@ const Article = () => {
                 className="group"
               >
                 <article>
-                  <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-muted mb-4">
+                  <div className="relative aspect-[16/10] rounded-[10px] overflow-hidden bg-muted mb-4">
                     <img 
                       src={article.image} 
                       alt={article.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[hsl(var(--editorial-tag-bg))] text-[hsl(var(--editorial-tag))] mb-3">
+                  <span className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center text-transparent border-b-[0.15em] border-solid border-b-transparent bg-gradient-to-r from-[#8d49f7] to-[#6b53ff] bg-clip-text hover:border-b-[#8d49f7] transition-colors">
                     {article.tag}
                   </span>
-                  <h3 className="font-sans text-xl font-bold text-[hsl(var(--editorial-text))] mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
                     {article.title}
                   </h3>
                   <p className="text-[hsl(var(--editorial-text-light))]">
