@@ -65,7 +65,7 @@ const Blog = () => {
                 </Button>
               </Link>
             </div>
-            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-muted">
+            <div className="relative aspect-[23/28] rounded-2xl overflow-hidden bg-muted">
               <img 
                 src={featuredArticle.image} 
                 alt={featuredArticle.title}
