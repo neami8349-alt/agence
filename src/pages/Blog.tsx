@@ -48,7 +48,7 @@ const Blog = () => {
     description:
       "Exploring how artificial intelligence and human creativity are converging to reshape the digital landscape. A deep dive into the transformative possibilities ahead.",
     image: heroImage,
-    tag: "Technology",
+    tag: "Innovation",
     slug: "future-creative-technology",
   };
 
@@ -71,7 +71,7 @@ const Blog = () => {
       title: "Sustainable Development",
       description: "Creating digital products with environmental consciousness at the core.",
       image: sustainableDevImage,
-      tag: "Innovation",
+      tag: "Development",
       slug: "sustainable-development",
     },
   ];
@@ -122,7 +122,7 @@ const Blog = () => {
       title: "Sustainable Development",
       description: "Creating digital products with environmental consciousness at the core.",
       image: sustainableDevImage,
-      tag: "Innovation",
+      tag: "Development",
       slug: "sustainable-development",
     },
     {
@@ -136,7 +136,7 @@ const Blog = () => {
       title: "Data-Driven Design Decisions",
       description: "Using analytics to inform creative choices.",
       image: storytellingImage,
-      tag: "Strategy",
+      tag: "Content",
       slug: "data-driven-design",
     },
     {
@@ -150,7 +150,7 @@ const Blog = () => {
       title: "Microinteractions Matter",
       description: "Small details that create big impact.",
       image: designSystemsImage,
-      tag: "UX",
+      tag: "Design",
       slug: "microinteractions-matter",
     },
     {
@@ -185,7 +185,7 @@ const Blog = () => {
       title: "User Testing Strategies",
       description: "Getting valuable feedback from real users.",
       image: sustainableDevImage,
-      tag: "Research",
+      tag: "Content",
       slug: "user-testing",
     },
     {
@@ -220,7 +220,7 @@ const Blog = () => {
       title: "Ethical Design Principles",
       description: "Creating responsible digital products.",
       image: storytellingImage,
-      tag: "Ethics",
+      tag: "Content",
       slug: "ethical-design",
     },
     {
@@ -234,14 +234,14 @@ const Blog = () => {
       title: "AI in Design Tools",
       description: "How artificial intelligence is changing the creative process.",
       image: designSystemsImage,
-      tag: "Technology",
+      tag: "Innovation",
       slug: "ai-design-tools",
     },
     {
       title: "Design Collaboration Tools",
       description: "Working together in distributed teams.",
       image: storytellingImage,
-      tag: "Workflow",
+      tag: "Content",
       slug: "collaboration-tools",
     },
   ];
