@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import heroImage from "@/assets/hero-creative-tech.jpg";
@@ -13,6 +13,7 @@ import avatar4 from "@/assets/avatar-4.jpg";
 
 const Blog = () => {
   const articlesRef = useRef<(HTMLAnchorElement | null)[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -354,7 +355,7 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* All Articles Section */}
+      {/* More Articles Section */}
       <section className="pt-0 pb-16">
         <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
           <h2 
@@ -372,10 +373,30 @@ const Blog = () => {
               lineHeight: 1.5
             }}
           >
-            Latest Articles
+            More Articles
           </h2>
+          
+          {/* Category Filter Bar */}
+          <div className="flex gap-4 mb-8 flex-wrap">
+            {["All", "Design", "Content", "Innovation", "Strategy", "UX", "Development", "Research", "Ethics", "Technology", "Workflow"].map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wide transition-colors ${
+                  selectedCategory === category
+                    ? "text-primary border-b-2 border-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
           <div className="flex flex-wrap gap-[4.347826087%] gap-y-16">
-            {allArticles.map((article, index) => (
+            {allArticles
+              .filter((article) => selectedCategory === "All" || article.tag === selectedCategory)
+              .map((article, index) => (
               <Link
                 key={index}
                 to={`/article/${article.slug}`}
