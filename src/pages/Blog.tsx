@@ -69,8 +69,8 @@ const Blog = () => {
 
       <section className="animate-fade-in" style={{ paddingTop: 0 }}>
         <div className="mx-auto" style={{ padding: "0 calc(18vw - 10rem)" }}>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+          <div className="flex justify-between items-center gap-12">
+            <div className="space-y-6" style={{ flexBasis: '44%' }}>
               <Link to={`/article/${featuredArticle.slug}`}>
                 <h1 className="font-sans text-[3.4rem] font-semibold text-[hsl(var(--editorial-text))] md:text-[4.2rem] md:leading-[1.1] lg:text-[6rem] lg:leading-[1] hover:text-primary transition-colors cursor-pointer">
                   {featuredArticle.title}
@@ -87,7 +87,7 @@ const Blog = () => {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-            <Link to={`/article/${featuredArticle.slug}`} className="block relative aspect-[23/28] rounded-2xl overflow-hidden bg-muted my-[4rem] group">
+            <Link to={`/article/${featuredArticle.slug}`} className="block relative aspect-[23/28] rounded-2xl overflow-hidden bg-muted my-[4rem] group" style={{ flexBasis: '50%' }}>
               <img src={featuredArticle.image} alt={featuredArticle.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </Link>
           </div>
