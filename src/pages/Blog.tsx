@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import heroImage from "@/assets/hero-creative-tech.jpg";
@@ -49,20 +49,18 @@ const Blog = () => {
         <div className="mx-auto" style={{ maxWidth: '86.25rem', padding: '0 calc(18vw - 10rem)' }}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[hsl(var(--editorial-tag-bg))] text-[hsl(var(--editorial-tag))]">
-                {featuredArticle.tag}
-              </span>
               <h1 className="font-serif text-5xl lg:text-6xl font-bold text-[hsl(var(--editorial-text))] leading-tight">
                 {featuredArticle.title}
               </h1>
               <p className="text-lg text-[hsl(var(--editorial-text-light))] leading-relaxed">
                 {featuredArticle.description}
               </p>
-              <Link to={`/article/${featuredArticle.slug}`}>
-                <Button size="lg" className="group">
-                  Read Story
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+              <Link 
+                to={`/article/${featuredArticle.slug}`}
+                className="inline-flex items-center text-lg font-medium text-primary hover:underline group"
+              >
+                Read Story
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
             <div className="relative aspect-[23/28] rounded-2xl overflow-hidden bg-muted">
