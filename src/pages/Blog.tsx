@@ -87,7 +87,7 @@ const Blog = () => {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-            <Link to={`/article/${featuredArticle.slug}`} className="block relative aspect-[23/28] rounded-2xl overflow-hidden bg-muted my-[4rem] group" style={{ flexBasis: '50%' }}>
+            <Link to={`/article/${featuredArticle.slug}`} className="block relative aspect-[23/28] rounded-[10px] overflow-hidden bg-muted my-[4rem] group" style={{ flexBasis: '50%' }}>
               <img src={featuredArticle.image} alt={featuredArticle.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </Link>
           </div>
@@ -109,14 +109,14 @@ const Blog = () => {
                 }}
               >
                 <article className="h-full">
-                  <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-muted mb-4">
+                  <div className="relative aspect-[16/10] rounded-[10px] overflow-hidden bg-muted mb-4">
                     <img
                       src={article.image}
                       alt={article.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <span className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center text-transparent border-b-[0.15em] border-solid border-b-transparent bg-gradient-to-r from-[#8d49f7] to-[#6b53ff] bg-clip-text mb-3 hover:border-b-[#8d49f7] transition-colors">
+                  <span className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center text-transparent border-b-[0.15em] border-solid border-b-transparent bg-gradient-to-r from-[#8d49f7] to-[#6b53ff] bg-clip-text hover:border-b-[#8d49f7] transition-colors">
                     {article.tag}
                   </span>
                   <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
