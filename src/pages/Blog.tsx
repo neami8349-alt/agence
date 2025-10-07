@@ -10,10 +10,11 @@ import sustainableDevImage from "@/assets/sustainable-dev.jpg";
 const Blog = () => {
   const featuredArticle = {
     title: "The Future of Creative Technology",
-    description: "Exploring how artificial intelligence and human creativity are converging to reshape the digital landscape. A deep dive into the transformative possibilities ahead.",
+    description:
+      "Exploring how artificial intelligence and human creativity are converging to reshape the digital landscape. A deep dive into the transformative possibilities ahead.",
     image: heroImage,
     tag: "Technology",
-    slug: "future-creative-technology"
+    slug: "future-creative-technology",
   };
 
   const articles = [
@@ -22,22 +23,22 @@ const Blog = () => {
       description: "Building maintainable design foundations for growing teams and products.",
       image: designSystemsImage,
       tag: "Design",
-      slug: "design-systems-scale"
+      slug: "design-systems-scale",
     },
     {
       title: "The Art of Storytelling",
       description: "How narrative structure influences user experience and engagement.",
       image: storytellingImage,
       tag: "Content",
-      slug: "art-of-storytelling"
+      slug: "art-of-storytelling",
     },
     {
       title: "Sustainable Development",
       description: "Creating digital products with environmental consciousness at the core.",
       image: sustainableDevImage,
       tag: "Innovation",
-      slug: "sustainable-development"
-    }
+      slug: "sustainable-development",
+    },
   ];
 
   return (
@@ -45,7 +46,7 @@ const Blog = () => {
       <Header />
 
       <section className="animate-fade-in" style={{ paddingTop: 0 }}>
-        <div className="mx-auto" style={{ maxWidth: '86.25rem', padding: '0 calc(18vw - 10rem)' }}>
+        <div className="mx-auto" style={{ padding: "0 calc(18vw - 10rem)" }}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="font-serif text-5xl lg:text-6xl font-bold text-[hsl(var(--editorial-text))] leading-tight">
@@ -54,7 +55,7 @@ const Blog = () => {
               <p className="text-lg text-[hsl(var(--editorial-text-light))] leading-relaxed">
                 {featuredArticle.description}
               </p>
-              <Link 
+              <Link
                 to={`/article/${featuredArticle.slug}`}
                 className="inline-flex items-center text-lg font-medium text-primary hover:underline group"
               >
@@ -63,11 +64,7 @@ const Blog = () => {
               </Link>
             </div>
             <div className="relative aspect-[23/28] rounded-2xl overflow-hidden bg-muted my-[4rem]">
-              <img 
-                src={featuredArticle.image} 
-                alt={featuredArticle.title}
-                className="w-full h-full object-cover"
-              />
+              <img src={featuredArticle.image} alt={featuredArticle.title} className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -75,22 +72,22 @@ const Blog = () => {
 
       {/* Articles Grid */}
       <section className="py-16">
-        <div className="mx-auto" style={{ width: '100%', padding: '0 calc(18vw - 10rem)' }}>
+        <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
           <div className="flex gap-[4.347826087%]">
             {articles.map((article, index) => (
               <Link
                 key={index}
                 to={`/article/${article.slug}`}
                 className="group animate-scale-in"
-                style={{ 
-                  flex: '0 0 30.434783%',
-                  animationDelay: `${index * 100}ms`
+                style={{
+                  flex: "0 0 30.434783%",
+                  animationDelay: `${index * 100}ms`,
                 }}
               >
                 <article className="h-full">
                   <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-muted mb-4">
-                    <img 
-                      src={article.image} 
+                    <img
+                      src={article.image}
                       alt={article.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -101,9 +98,7 @@ const Blog = () => {
                   <h2 className="font-serif text-2xl font-bold text-[hsl(var(--editorial-text))] mb-2 group-hover:text-primary transition-colors">
                     {article.title}
                   </h2>
-                  <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">
-                    {article.description}
-                  </p>
+                  <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">{article.description}</p>
                 </article>
               </Link>
             ))}
@@ -113,7 +108,7 @@ const Blog = () => {
 
       {/* Footer */}
       <footer className="border-t border-border mt-24">
-        <div className="mx-auto py-12" style={{ maxWidth: '86.25rem', padding: '2rem calc(18vw - 10rem)' }}>
+        <div className="mx-auto py-12" style={{ maxWidth: "86.25rem", padding: "2rem calc(18vw - 10rem)" }}>
           <div className="text-center text-sm text-muted-foreground">
             <p>© 2024 Editorial. All rights reserved.</p>
           </div>
