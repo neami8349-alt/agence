@@ -389,7 +389,7 @@ const Blog = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`text-sm font-medium uppercase tracking-wide transition-colors ${
+                className={`font-medium uppercase tracking-wide transition-colors ${
                   selectedCategory === category
                     ? "text-[rgb(51,74,192)] bg-[rgb(235,237,251)]"
                     : "text-foreground hover:bg-muted"
@@ -398,7 +398,8 @@ const Blog = () => {
                   display: "block",
                   padding: "0.5rem 1rem",
                   borderRadius: "0.6rem",
-                  textDecoration: "none"
+                  textDecoration: "none",
+                  fontSize: "1.6rem"
                 }}
               >
                 {category}
