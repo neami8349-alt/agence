@@ -21,7 +21,7 @@ const Header = () => {
       }`}
       style={{ height: "72px" }}
     >
-      <div className="mx-auto h-full" style={{ maxWidth: "86.25rem", padding: "0 calc(18vw - 10rem)" }}>
+      <div className="mx-auto h-full" style={{ padding: "0 calc(18vw - 10rem)" }}>
         <div className="flex items-center justify-between h-full">
           <Link to="/" className="font-serif text-2xl font-bold text-foreground">
             Editorial
