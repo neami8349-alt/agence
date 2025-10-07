@@ -15,12 +15,12 @@ const Blog = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fadeInUp');
+            entry.target.classList.add("animate-fadeInUp");
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 }, // Changed from 0.5 to 0.1 - triggers earlier
     );
 
     articlesRef.current.forEach((article) => {
@@ -29,6 +29,7 @@ const Blog = () => {
 
     return () => observer.disconnect();
   }, []);
+
   const featuredArticle = {
     title: "The Future of Creative Technology",
     description:
