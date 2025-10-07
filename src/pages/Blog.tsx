@@ -418,6 +418,7 @@ const Blog = () => {
                 className="group blog-feed__item"
                 style={{
                   flex: "0 0 30.434783%",
+                  animationDelay: `${(index % 3) * 150}ms`
                 }}
               >
                 <article className="h-full">
