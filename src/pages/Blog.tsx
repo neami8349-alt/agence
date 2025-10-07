@@ -67,7 +67,7 @@ const Blog = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="animate-fade-in" style={{ paddingTop: 0 }}>
+      <section className="animate-fade-in md:pb-[5rem] lg:pb-[8rem]" style={{ paddingTop: 0 }}>
         <div className="mx-auto" style={{ padding: "0 calc(18vw - 10rem)" }}>
           <div className="flex justify-between items-center gap-12">
             <div className="space-y-6" style={{ flexBasis: '44%' }}>
@@ -95,7 +95,7 @@ const Blog = () => {
       </section>
 
       {/* Articles Grid */}
-      <section className="py-16">
+      <section className="pt-0 pb-16">
         <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
           <div className="flex gap-[4.347826087%]">
             {articles.map((article, index) => (
