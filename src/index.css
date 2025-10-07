@@ -37,7 +37,7 @@ All colors MUST be HSL.
     --ring: 220 70% 45%;
 
     --radius: 0.5rem;
-    
+
     /* Editorial-specific tokens */
     --editorial-text: 220 20% 15%;
     --editorial-text-light: 220 15% 45%;
@@ -90,7 +90,7 @@ All colors MUST be HSL.
     --border: 220 20% 20%;
     --input: 220 20% 20%;
     --ring: 220 70% 55%;
-    
+
     --editorial-text: 220 15% 92%;
     --editorial-text-light: 220 15% 65%;
     --editorial-tag: 220 70% 60%;
@@ -115,5 +115,9 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-size: 62.5%;
+  }
+  html {
+    font-size: 62.5%;
+    line-height: 2;
   }
 }
