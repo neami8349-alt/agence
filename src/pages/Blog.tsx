@@ -422,6 +422,7 @@ const Blog = () => {
                   borderRadius: "0.6rem",
                   textDecoration: "none",
                   fontSize: "1.6rem",
+                  lineHeight: "2rem",
                   fontWeight: 400,
                   backgroundColor: selectedCategory === category ? selectedCategoryStyle.bg : "transparent",
                   color: selectedCategory === category ? selectedCategoryStyle.text : "hsl(var(--foreground))",
