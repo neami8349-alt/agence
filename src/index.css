@@ -119,4 +119,10 @@ All colors MUST be HSL.
     font-size: 62.5%;
     line-height: 2;
   }
+
+  @media (min-width: 40em) {
+    body {
+      font-size: 1.8rem;
+    }
+  }
 }
