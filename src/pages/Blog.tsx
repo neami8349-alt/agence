@@ -16,16 +16,16 @@ const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
   const tagColors: Record<string, string> = {
-    "All": "#000000",
-    "Design": "#009aff",
-    "Development": "#32d158",
-    "Innovation": "#5e5ce6",
-    "Content": "#ff3037"
+    All: "#000000",
+    Design: "#009aff",
+    Development: "#32d158",
+    Innovation: "#5e5ce6",
+    Content: "#ff3037",
   };
 
   const selectedCategoryStyle = {
     bg: "rgba(0, 192, 232, 0.18)",
-    text: "#00C0E8"
+    text: "#00C0E8",
   };
 
   useEffect(() => {
@@ -86,26 +86,26 @@ const Blog = () => {
       title: "Why Design Thinking Matters More Than Ever",
       avatar: avatar1,
       author: "Emma Thompson",
-      slug: "design-thinking-matters"
+      slug: "design-thinking-matters",
     },
     {
       title: "The Hidden Cost of Technical Debt",
       avatar: avatar2,
       author: "Marcus Chen",
-      slug: "technical-debt-cost"
+      slug: "technical-debt-cost",
     },
     {
       title: "Rethinking User Privacy in 2024",
       avatar: avatar3,
       author: "Sofia Rodriguez",
-      slug: "rethinking-user-privacy"
+      slug: "rethinking-user-privacy",
     },
     {
       title: "The Future of Remote Collaboration",
       avatar: avatar4,
       author: "James Wilson",
-      slug: "remote-collaboration-future"
-    }
+      slug: "remote-collaboration-future",
+    },
   ];
 
   const allArticles = [
@@ -258,7 +258,7 @@ const Blog = () => {
       <section className="animate-fade-in md:pb-[5rem] lg:pb-[8rem]" style={{ paddingTop: 0 }}>
         <div className="mx-auto" style={{ padding: "0 calc(18vw - 10rem)" }}>
           <div className="flex justify-between items-center gap-12">
-            <div className="space-y-6" style={{ flexBasis: '44%' }}>
+            <div className="space-y-6" style={{ flexBasis: "44%" }}>
               <Link to={`/article/${featuredArticle.slug}`}>
                 <h1 className="font-sans text-[3.4rem] font-semibold text-[hsl(var(--editorial-text))] md:text-[4.2rem] md:leading-[1.1] lg:text-[6rem] lg:leading-[1] hover:text-primary transition-colors cursor-pointer">
                   {featuredArticle.title}
@@ -275,8 +275,16 @@ const Blog = () => {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-            <Link to={`/article/${featuredArticle.slug}`} className="block relative aspect-[23/28] rounded-[10px] overflow-hidden bg-muted my-[4rem] group" style={{ flexBasis: '50%' }}>
-              <img src={featuredArticle.image} alt={featuredArticle.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <Link
+              to={`/article/${featuredArticle.slug}`}
+              className="block relative aspect-[23/28] rounded-[10px] overflow-hidden bg-muted my-[4rem] group"
+              style={{ flexBasis: "50%" }}
+            >
+              <img
+                src={featuredArticle.image}
+                alt={featuredArticle.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
             </Link>
           </div>
         </div>
@@ -304,10 +312,10 @@ const Blog = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <span 
+                  <span
                     className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center transition-colors"
                     style={{
-                      color: tagColors[article.tag] || "#8d49f7"
+                      color: tagColors[article.tag] || "#8d49f7",
                     }}
                   >
                     {article.tag}
@@ -326,7 +334,7 @@ const Blog = () => {
       {/* Opinions Section */}
       <section className="pt-0 pb-16">
         <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
-          <h2 
+          <h2
             className="text-[hsl(var(--editorial-text))]"
             style={{
               width: "100%",
@@ -338,7 +346,7 @@ const Blog = () => {
               borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
               fontSize: "1.6rem",
               fontWeight: 600,
-              lineHeight: 1.5
+              lineHeight: 1.5,
             }}
           >
             Opinions
@@ -352,7 +360,7 @@ const Blog = () => {
                 className="group blog-feed__item"
                 style={{
                   flex: "0 0 calc(25% - 2.25rem)",
-                  animationDelay: `${index * 150}ms`
+                  animationDelay: `${index * 150}ms`,
                 }}
               >
                 <article className="h-full">
@@ -376,7 +384,7 @@ const Blog = () => {
       {/* More Articles Section */}
       <section className="pt-0 pb-16">
         <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
-          <h2 
+          <h2
             className="text-[hsl(var(--editorial-text))]"
             style={{
               width: "100%",
@@ -388,14 +396,14 @@ const Blog = () => {
               borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
               fontSize: "1.6rem",
               fontWeight: 600,
-              lineHeight: 1.5
+              lineHeight: 1.5,
             }}
           >
             More Articles
           </h2>
-          
+
           {/* Category Filter Bar */}
-          <div 
+          <div
             className="flex gap-4 mb-8 flex-wrap bg-background py-4 -mx-[calc(18vw-10rem)] px-[calc(18vw-10rem)] justify-center"
             style={{
               position: "sticky",
@@ -414,7 +422,7 @@ const Blog = () => {
                   borderRadius: "0.6rem",
                   textDecoration: "none",
                   fontSize: "1.6rem",
-                  fontWeight: selectedCategory === category ? 400 : 500,
+                  fontWeight: 400,
                   backgroundColor: selectedCategory === category ? selectedCategoryStyle.bg : "transparent",
                   color: selectedCategory === category ? selectedCategoryStyle.text : "hsl(var(--foreground))",
                 }}
@@ -428,39 +436,39 @@ const Blog = () => {
             {allArticles
               .filter((article) => selectedCategory === "All" || article.tag === selectedCategory)
               .map((article, index) => (
-              <Link
-                key={index}
-                to={`/article/${article.slug}`}
-                ref={(el) => (articlesRef.current[articles.length + opinions.length + index] = el)}
-                className="group blog-feed__item"
-                style={{
-                  flex: "0 0 30.434783%",
-                  animationDelay: `${(index % 3) * 150}ms`
-                }}
-              >
-                <article className="h-full">
-                  <div className="relative aspect-[16/10] rounded-[10px] overflow-hidden bg-muted mb-4">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <span 
-                    className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center transition-colors"
-                    style={{
-                      color: tagColors[article.tag] || "#8d49f7"
-                    }}
-                  >
-                    {article.tag}
-                  </span>
-                  <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
-                    {article.title}
-                  </h2>
-                  <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">{article.description}</p>
-                </article>
-              </Link>
-            ))}
+                <Link
+                  key={index}
+                  to={`/article/${article.slug}`}
+                  ref={(el) => (articlesRef.current[articles.length + opinions.length + index] = el)}
+                  className="group blog-feed__item"
+                  style={{
+                    flex: "0 0 30.434783%",
+                    animationDelay: `${(index % 3) * 150}ms`,
+                  }}
+                >
+                  <article className="h-full">
+                    <div className="relative aspect-[16/10] rounded-[10px] overflow-hidden bg-muted mb-4">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <span
+                      className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center transition-colors"
+                      style={{
+                        color: tagColors[article.tag] || "#8d49f7",
+                      }}
+                    >
+                      {article.tag}
+                    </span>
+                    <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
+                      {article.title}
+                    </h2>
+                    <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">{article.description}</p>
+                  </article>
+                </Link>
+              ))}
           </div>
         </div>
       </section>
