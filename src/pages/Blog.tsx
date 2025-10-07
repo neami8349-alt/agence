@@ -15,6 +15,14 @@ const Blog = () => {
   const articlesRef = useRef<(HTMLAnchorElement | null)[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
+  const categoryColors: Record<string, { bg: string; text: string }> = {
+    "All": { bg: "#000000", text: "#ffffff" },
+    "Design": { bg: "#009aff", text: "#ffffff" },
+    "Development": { bg: "#32d158", text: "#ffffff" },
+    "Innovation": { bg: "#5e5ce6", text: "#ffffff" },
+    "Content": { bg: "#ff3037", text: "#ffffff" }
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -291,7 +299,12 @@ const Blog = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <span className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center text-transparent border-b-[0.15em] border-solid border-b-transparent bg-gradient-to-r from-[#8d49f7] to-[#6b53ff] bg-clip-text hover:border-b-[#8d49f7] transition-colors">
+                  <span 
+                    className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center transition-colors"
+                    style={{
+                      color: categoryColors[article.tag]?.bg || "#8d49f7"
+                    }}
+                  >
                     {article.tag}
                   </span>
                   <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
@@ -385,21 +398,19 @@ const Blog = () => {
               zIndex: 10,
             }}
           >
-            {["All", "Design", "Development", "Innovation", "Content", "UX", "Strategy"].map((category) => (
+            {["All", "Design", "Development", "Innovation", "Content"].map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`font-medium uppercase tracking-wide transition-colors ${
-                  selectedCategory === category
-                    ? "text-[rgb(51,74,192)] bg-[rgb(235,237,251)]"
-                    : "text-foreground hover:bg-muted"
-                }`}
+                className="font-medium uppercase tracking-wide transition-colors"
                 style={{
                   display: "block",
                   padding: "0.5rem 1rem",
                   borderRadius: "0.6rem",
                   textDecoration: "none",
-                  fontSize: "1.6rem"
+                  fontSize: "1.6rem",
+                  backgroundColor: selectedCategory === category ? categoryColors[category].bg : "transparent",
+                  color: selectedCategory === category ? categoryColors[category].text : "hsl(var(--foreground))",
                 }}
               >
                 {category}
@@ -429,7 +440,12 @@ const Blog = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <span className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center text-transparent border-b-[0.15em] border-solid border-b-transparent bg-gradient-to-r from-[#8d49f7] to-[#6b53ff] bg-clip-text hover:border-b-[#8d49f7] transition-colors">
+                  <span 
+                    className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center transition-colors"
+                    style={{
+                      color: categoryColors[article.tag]?.bg || "#8d49f7"
+                    }}
+                  >
                     {article.tag}
                   </span>
                   <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
