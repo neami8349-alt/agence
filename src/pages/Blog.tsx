@@ -15,12 +15,17 @@ const Blog = () => {
   const articlesRef = useRef<(HTMLAnchorElement | null)[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
-  const categoryColors: Record<string, { bg: string; text: string; bgOpacity: string }> = {
-    "All": { bg: "#00C0E8", text: "#00C0E8", bgOpacity: "rgba(0, 192, 232, 0.18)" },
-    "Design": { bg: "#00C0E8", text: "#00C0E8", bgOpacity: "rgba(0, 192, 232, 0.18)" },
-    "Development": { bg: "#00C0E8", text: "#00C0E8", bgOpacity: "rgba(0, 192, 232, 0.18)" },
-    "Innovation": { bg: "#00C0E8", text: "#00C0E8", bgOpacity: "rgba(0, 192, 232, 0.18)" },
-    "Content": { bg: "#00C0E8", text: "#00C0E8", bgOpacity: "rgba(0, 192, 232, 0.18)" }
+  const tagColors: Record<string, string> = {
+    "All": "#000000",
+    "Design": "#009aff",
+    "Development": "#32d158",
+    "Innovation": "#5e5ce6",
+    "Content": "#ff3037"
+  };
+
+  const selectedCategoryStyle = {
+    bg: "rgba(0, 192, 232, 0.18)",
+    text: "#00C0E8"
   };
 
   useEffect(() => {
@@ -302,7 +307,7 @@ const Blog = () => {
                   <span 
                     className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center transition-colors"
                     style={{
-                      color: categoryColors[article.tag]?.bg || "#8d49f7"
+                      color: tagColors[article.tag] || "#8d49f7"
                     }}
                   >
                     {article.tag}
@@ -409,8 +414,8 @@ const Blog = () => {
                   borderRadius: "0.6rem",
                   textDecoration: "none",
                   fontSize: "1.6rem",
-                  backgroundColor: selectedCategory === category ? categoryColors[category].bgOpacity : "transparent",
-                  color: selectedCategory === category ? categoryColors[category].text : "hsl(var(--foreground))",
+                  backgroundColor: selectedCategory === category ? selectedCategoryStyle.bg : "transparent",
+                  color: selectedCategory === category ? selectedCategoryStyle.text : "hsl(var(--foreground))",
                 }}
               >
                 {category}
@@ -443,7 +448,7 @@ const Blog = () => {
                   <span 
                     className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center transition-colors"
                     style={{
-                      color: categoryColors[article.tag]?.bg || "#8d49f7"
+                      color: tagColors[article.tag] || "#8d49f7"
                     }}
                   >
                     {article.tag}
