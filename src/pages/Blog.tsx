@@ -15,7 +15,7 @@ const Blog = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('fadeInUp');
+            entry.target.classList.add('animate-fadeInUp');
             observer.unobserve(entry.target);
           }
         });

@@ -132,23 +132,21 @@ All colors MUST be HSL.
     opacity: 0;
   }
 
-  .blog-feed__item.fadeInUp {
-    animation: fadeInUp 0.3s ease-out;
-    animation-fill-mode: both;
+  .blog-feed__item.animate-fadeInUp {
     opacity: 1;
   }
 
   @media (min-width: 32em) {
-    .blog-feed__item:nth-child(2n).fadeInUp {
+    .blog-feed__item:nth-child(2n).animate-fadeInUp {
       animation-delay: 150ms;
     }
   }
 
   @media (min-width: 60em) {
-    .blog-feed__item:nth-child(3n + 2).fadeInUp {
+    .blog-feed__item:nth-child(3n + 2).animate-fadeInUp {
       animation-delay: 150ms;
     }
-    .blog-feed__item:nth-child(3n + 3).fadeInUp {
+    .blog-feed__item:nth-child(3n + 3).animate-fadeInUp {
       animation-delay: 300ms;
     }
   }
