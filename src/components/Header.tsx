@@ -29,7 +29,7 @@ const Header = () => {
           <nav className="flex items-center gap-8">
             <Link
               to="/blog"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[1.8rem] font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               Blog
             </Link>
@@ -37,11 +37,11 @@ const Header = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+              className="text-[1.8rem] font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
             >
               Twitter
             </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#" className="text-[1.8rem] font-medium text-muted-foreground hover:text-foreground transition-colors">
               Remix
             </a>
           </nav>
