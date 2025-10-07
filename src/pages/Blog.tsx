@@ -378,14 +378,14 @@ const Blog = () => {
           
           {/* Category Filter Bar */}
           <div 
-            className="flex gap-4 mb-8 flex-wrap bg-background py-4 -mx-[calc(18vw-10rem)] px-[calc(18vw-10rem)]"
+            className="flex gap-4 mb-8 flex-wrap bg-background py-4 -mx-[calc(18vw-10rem)] px-[calc(18vw-10rem)] justify-center"
             style={{
               position: "sticky",
               top: "72px",
               zIndex: 10,
             }}
           >
-            {["All", "Design", "Content", "Innovation", "Strategy", "UX", "Development", "Research", "Ethics", "Technology", "Workflow"].map((category) => (
+            {["All", "Design", "Development", "Innovation", "Content", "UX", "Strategy"].map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
