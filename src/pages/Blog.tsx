@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Header from "@/components/Header";
 import heroImage from "@/assets/hero-creative-tech.jpg";
 import designSystemsImage from "@/assets/design-systems.jpg";
 import storytellingImage from "@/assets/storytelling.jpg";
@@ -41,27 +42,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border">
-        <div className="mx-auto" style={{ maxWidth: '86.25rem', padding: '0 calc(18vw - 10rem)' }}>
-          <div className="flex items-center justify-between py-6">
-            <Link to="/" className="font-serif text-2xl font-bold text-foreground">
-              Editorial
-            </Link>
-            <nav className="hidden md:flex gap-8">
-              <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Stories
-              </Link>
-              <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                About
-              </a>
-              <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Contact
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Featured Article */}
       <section className="py-16 animate-fade-in">

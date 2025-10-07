@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Share2 } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { FacebookIcon, TwitterIcon, LinkedinIcon } from "lucide-react";
+import Header from "@/components/Header";
 import articleCoverImage from "@/assets/article-cover.jpg";
 import workspaceImage from "@/assets/workspace.jpg";
 import designSystemsImage from "@/assets/design-systems.jpg";
@@ -35,6 +36,8 @@ const Article = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
+
       {/* Hero Image */}
       <div className="relative w-full bg-muted" style={{ aspectRatio: '16/5' }}>
         <img 
