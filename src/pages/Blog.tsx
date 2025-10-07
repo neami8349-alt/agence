@@ -94,6 +94,149 @@ const Blog = () => {
     }
   ];
 
+  const allArticles = [
+    {
+      title: "Design Systems That Scale",
+      description: "Building maintainable design foundations for growing teams and products.",
+      image: designSystemsImage,
+      tag: "Design",
+      slug: "design-systems-scale",
+    },
+    {
+      title: "The Art of Storytelling",
+      description: "How narrative structure influences user experience and engagement.",
+      image: storytellingImage,
+      tag: "Content",
+      slug: "art-of-storytelling",
+    },
+    {
+      title: "Sustainable Development",
+      description: "Creating digital products with environmental consciousness at the core.",
+      image: sustainableDevImage,
+      tag: "Innovation",
+      slug: "sustainable-development",
+    },
+    {
+      title: "Building Accessible Interfaces",
+      description: "Creating inclusive digital experiences for all users.",
+      image: designSystemsImage,
+      tag: "Design",
+      slug: "accessible-interfaces",
+    },
+    {
+      title: "Data-Driven Design Decisions",
+      description: "Using analytics to inform creative choices.",
+      image: storytellingImage,
+      tag: "Strategy",
+      slug: "data-driven-design",
+    },
+    {
+      title: "The Power of Minimalism",
+      description: "Less is more in modern digital design.",
+      image: sustainableDevImage,
+      tag: "Design",
+      slug: "power-minimalism",
+    },
+    {
+      title: "Microinteractions Matter",
+      description: "Small details that create big impact.",
+      image: designSystemsImage,
+      tag: "UX",
+      slug: "microinteractions-matter",
+    },
+    {
+      title: "Color Psychology in UI",
+      description: "How colors influence user behavior and emotion.",
+      image: storytellingImage,
+      tag: "Design",
+      slug: "color-psychology",
+    },
+    {
+      title: "Typography Best Practices",
+      description: "Choosing and using fonts effectively.",
+      image: sustainableDevImage,
+      tag: "Design",
+      slug: "typography-practices",
+    },
+    {
+      title: "Mobile-First Methodology",
+      description: "Designing for the smallest screen first.",
+      image: designSystemsImage,
+      tag: "Development",
+      slug: "mobile-first",
+    },
+    {
+      title: "Animation in Web Design",
+      description: "When and how to use motion effectively.",
+      image: storytellingImage,
+      tag: "Design",
+      slug: "animation-web-design",
+    },
+    {
+      title: "User Testing Strategies",
+      description: "Getting valuable feedback from real users.",
+      image: sustainableDevImage,
+      tag: "Research",
+      slug: "user-testing",
+    },
+    {
+      title: "Design Systems Governance",
+      description: "Managing and maintaining design consistency.",
+      image: designSystemsImage,
+      tag: "Design",
+      slug: "design-governance",
+    },
+    {
+      title: "Dark Mode Implementation",
+      description: "Creating beautiful experiences in low light.",
+      image: storytellingImage,
+      tag: "Development",
+      slug: "dark-mode",
+    },
+    {
+      title: "Performance Optimization",
+      description: "Making your website lightning fast.",
+      image: sustainableDevImage,
+      tag: "Development",
+      slug: "performance-optimization",
+    },
+    {
+      title: "Voice Interface Design",
+      description: "Designing for the next generation of interaction.",
+      image: designSystemsImage,
+      tag: "Innovation",
+      slug: "voice-interface",
+    },
+    {
+      title: "Ethical Design Principles",
+      description: "Creating responsible digital products.",
+      image: storytellingImage,
+      tag: "Ethics",
+      slug: "ethical-design",
+    },
+    {
+      title: "Cross-Platform Consistency",
+      description: "Maintaining brand identity across devices.",
+      image: sustainableDevImage,
+      tag: "Design",
+      slug: "cross-platform",
+    },
+    {
+      title: "AI in Design Tools",
+      description: "How artificial intelligence is changing the creative process.",
+      image: designSystemsImage,
+      tag: "Technology",
+      slug: "ai-design-tools",
+    },
+    {
+      title: "Design Collaboration Tools",
+      description: "Working together in distributed teams.",
+      image: storytellingImage,
+      tag: "Workflow",
+      slug: "collaboration-tools",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -204,6 +347,59 @@ const Blog = () => {
                   <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] text-left group-hover:text-primary transition-colors">
                     {opinion.title}
                   </h2>
+                </article>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* All Articles Section */}
+      <section className="pt-0 pb-16">
+        <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
+          <h2 
+            className="text-[hsl(var(--editorial-text))]"
+            style={{
+              width: "100%",
+              marginBottom: "3rem",
+              padding: "1rem 0",
+              textAlign: "left",
+              letterSpacing: "0.2rem",
+              textTransform: "uppercase",
+              borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
+              fontSize: "1.6rem",
+              fontWeight: 600,
+              lineHeight: 1.5
+            }}
+          >
+            Latest Articles
+          </h2>
+          <div className="flex flex-wrap gap-[4.347826087%] gap-y-16">
+            {allArticles.map((article, index) => (
+              <Link
+                key={index}
+                to={`/article/${article.slug}`}
+                ref={(el) => (articlesRef.current[articles.length + opinions.length + index] = el)}
+                className="group blog-feed__item"
+                style={{
+                  flex: "0 0 30.434783%",
+                }}
+              >
+                <article className="h-full">
+                  <div className="relative aspect-[16/10] rounded-[10px] overflow-hidden bg-muted mb-4">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <span className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center text-transparent border-b-[0.15em] border-solid border-b-transparent bg-gradient-to-r from-[#8d49f7] to-[#6b53ff] bg-clip-text hover:border-b-[#8d49f7] transition-colors">
+                    {article.tag}
+                  </span>
+                  <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
+                    {article.title}
+                  </h2>
+                  <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">{article.description}</p>
                 </article>
               </Link>
             ))}
