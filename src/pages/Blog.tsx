@@ -193,14 +193,14 @@ const Blog = () => {
                 }}
               >
                 <article className="h-full">
-                  <div className="relative w-[60px] h-[60px] rounded-full overflow-hidden bg-muted mb-4 mx-auto">
+                  <div className="relative w-[60px] h-[60px] rounded-full overflow-hidden bg-muted mb-4">
                     <img
                       src={opinion.avatar}
                       alt={opinion.author}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] text-center group-hover:text-primary transition-colors">
+                  <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] text-left group-hover:text-primary transition-colors">
                     {opinion.title}
                   </h2>
                 </article>
