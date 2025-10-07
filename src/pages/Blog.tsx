@@ -71,7 +71,7 @@ const Blog = () => {
         <div className="mx-auto" style={{ padding: "0 calc(18vw - 10rem)" }}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="font-sans text-5xl lg:text-6xl font-bold text-[hsl(var(--editorial-text))] leading-tight">
+              <h1 className="font-sans text-[3.4rem] font-extrabold text-[hsl(var(--editorial-text))] md:text-[4.2rem] md:leading-[1.1] lg:text-[6rem] lg:leading-[1]">
                 {featuredArticle.title}
               </h1>
               <p className="text-lg text-[hsl(var(--editorial-text-light))] leading-relaxed">
