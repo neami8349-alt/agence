@@ -44,8 +44,7 @@ const Blog = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Featured Article */}
-      <section className="py-16 animate-fade-in">
+      <section className="animate-fade-in" style={{ paddingTop: 0 }}>
         <div className="mx-auto" style={{ maxWidth: '86.25rem', padding: '0 calc(18vw - 10rem)' }}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -63,7 +62,7 @@ const Blog = () => {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-            <div className="relative aspect-[23/28] rounded-2xl overflow-hidden bg-muted">
+            <div className="relative aspect-[23/28] rounded-2xl overflow-hidden bg-muted my-[4rem]">
               <img 
                 src={featuredArticle.image} 
                 alt={featuredArticle.title}
