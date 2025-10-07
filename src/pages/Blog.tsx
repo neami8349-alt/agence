@@ -71,9 +71,11 @@ const Blog = () => {
         <div className="mx-auto" style={{ padding: "0 calc(18vw - 10rem)" }}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="font-sans text-[3.4rem] font-semibold text-[hsl(var(--editorial-text))] md:text-[4.2rem] md:leading-[1.1] lg:text-[6rem] lg:leading-[1]">
-                {featuredArticle.title}
-              </h1>
+              <Link to={`/article/${featuredArticle.slug}`}>
+                <h1 className="font-sans text-[3.4rem] font-semibold text-[hsl(var(--editorial-text))] md:text-[4.2rem] md:leading-[1.1] lg:text-[6rem] lg:leading-[1] hover:text-primary transition-colors cursor-pointer">
+                  {featuredArticle.title}
+                </h1>
+              </Link>
               <p className="text-[1.8rem] text-[hsl(var(--editorial-text-light))] leading-relaxed">
                 {featuredArticle.description}
               </p>
@@ -85,9 +87,9 @@ const Blog = () => {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-            <div className="relative aspect-[23/28] rounded-2xl overflow-hidden bg-muted my-[4rem]">
-              <img src={featuredArticle.image} alt={featuredArticle.title} className="w-full h-full object-cover" />
-            </div>
+            <Link to={`/article/${featuredArticle.slug}`} className="block relative aspect-[23/28] rounded-2xl overflow-hidden bg-muted my-[4rem] group">
+              <img src={featuredArticle.image} alt={featuredArticle.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </Link>
           </div>
         </div>
       </section>
