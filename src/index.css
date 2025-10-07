@@ -128,22 +128,27 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  .fadeInUp {
+  .blog-feed__item {
+    opacity: 0;
+  }
+
+  .blog-feed__item.fadeInUp {
     animation: fadeInUp 0.3s ease-out;
     animation-fill-mode: both;
+    opacity: 1;
   }
 
   @media (min-width: 32em) {
-    .blog-feed__item:nth-child(2n) {
+    .blog-feed__item:nth-child(2n).fadeInUp {
       animation-delay: 150ms;
     }
   }
 
   @media (min-width: 60em) {
-    .blog-feed__item:nth-child(3n + 2) {
+    .blog-feed__item:nth-child(3n + 2).fadeInUp {
       animation-delay: 150ms;
     }
-    .blog-feed__item:nth-child(3n + 3) {
+    .blog-feed__item:nth-child(3n + 3).fadeInUp {
       animation-delay: 300ms;
     }
   }

@@ -103,7 +103,6 @@ const Blog = () => {
                 className="group blog-feed__item"
                 style={{
                   flex: "0 0 30.434783%",
-                  opacity: 0,
                 }}
               >
                 <article className="h-full">
