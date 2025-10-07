@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import heroImage from "@/assets/hero-creative-tech.jpg";
@@ -8,6 +8,27 @@ import storytellingImage from "@/assets/storytelling.jpg";
 import sustainableDevImage from "@/assets/sustainable-dev.jpg";
 
 const Blog = () => {
+  const articlesRef = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fadeInUp');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    articlesRef.current.forEach((article) => {
+      if (article) observer.observe(article);
+    });
+
+    return () => observer.disconnect();
+  }, []);
   const featuredArticle = {
     title: "The Future of Creative Technology",
     description:
@@ -78,10 +99,11 @@ const Blog = () => {
               <Link
                 key={index}
                 to={`/article/${article.slug}`}
-                className="group animate-scale-in"
+                ref={(el) => (articlesRef.current[index] = el)}
+                className="group blog-feed__item"
                 style={{
                   flex: "0 0 30.434783%",
-                  animationDelay: `${index * 100}ms`,
+                  opacity: 0,
                 }}
               >
                 <article className="h-full">

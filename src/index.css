@@ -126,3 +126,25 @@ All colors MUST be HSL.
     }
   }
 }
+
+@layer components {
+  .fadeInUp {
+    animation: fadeInUp 0.3s ease-out;
+    animation-fill-mode: both;
+  }
+
+  @media (min-width: 32em) {
+    .blog-feed__item:nth-child(2n) {
+      animation-delay: 150ms;
+    }
+  }
+
+  @media (min-width: 60em) {
+    .blog-feed__item:nth-child(3n + 2) {
+      animation-delay: 150ms;
+    }
+    .blog-feed__item:nth-child(3n + 3) {
+      animation-delay: 300ms;
+    }
+  }
+}
