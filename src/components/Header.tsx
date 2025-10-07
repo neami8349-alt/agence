@@ -23,7 +23,7 @@ const Header = () => {
     >
       <div className="mx-auto h-full" style={{ padding: "0 calc(18vw - 10rem)" }}>
         <div className="flex items-center justify-between h-full">
-          <Link to="/" className="font-serif text-2xl font-bold text-foreground">
+          <Link to="/" className="font-sans text-2xl font-bold text-foreground">
             Editorial
           </Link>
           <nav className="flex items-center gap-8">

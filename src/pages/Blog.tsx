@@ -71,7 +71,7 @@ const Blog = () => {
         <div className="mx-auto" style={{ padding: "0 calc(18vw - 10rem)" }}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="font-serif text-5xl lg:text-6xl font-bold text-[hsl(var(--editorial-text))] leading-tight">
+              <h1 className="font-sans text-5xl lg:text-6xl font-bold text-[hsl(var(--editorial-text))] leading-tight">
                 {featuredArticle.title}
               </h1>
               <p className="text-lg text-[hsl(var(--editorial-text-light))] leading-relaxed">
@@ -117,7 +117,7 @@ const Blog = () => {
                   <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[hsl(var(--editorial-tag-bg))] text-[hsl(var(--editorial-tag))] mb-3">
                     {article.tag}
                   </span>
-                  <h2 className="font-serif text-2xl font-bold text-[hsl(var(--editorial-text))] mb-2 group-hover:text-primary transition-colors">
+                  <h2 className="font-sans text-2xl font-bold text-[hsl(var(--editorial-text))] mb-2 group-hover:text-primary transition-colors">
                     {article.title}
                   </h2>
                   <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">{article.description}</p>

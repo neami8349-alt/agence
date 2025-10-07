@@ -64,7 +64,7 @@ const Article = () => {
           <time className="block text-sm font-medium text-muted-foreground">
             December 15, 2024
           </time>
-          <h1 className="font-serif text-5xl lg:text-6xl font-bold text-[hsl(var(--editorial-text))] leading-tight">
+          <h1 className="font-sans text-5xl lg:text-6xl font-bold text-[hsl(var(--editorial-text))] leading-tight">
             The Future of Creative Technology
           </h1>
           <div className="flex items-center gap-4 pt-4">
@@ -106,7 +106,7 @@ const Article = () => {
 
         {/* Large Quote */}
         <blockquote className="my-12 py-8 border-l-4 border-primary pl-8" style={{ maxWidth: '1020px', marginLeft: 'calc(-190px)', marginRight: 'calc(-190px)' }}>
-          <p className="font-serif text-3xl font-semibold text-[hsl(var(--editorial-text))] leading-relaxed mb-4">
+          <p className="font-sans text-3xl font-semibold text-[hsl(var(--editorial-text))] leading-relaxed mb-4">
             "The future belongs to those who can harness technology's power while maintaining the irreplaceable 
             essence of human insight and intuition."
           </p>
@@ -175,7 +175,7 @@ const Article = () => {
       {/* Related Articles */}
       <section className="py-16">
         <div className="mx-auto" style={{ maxWidth: '1020px', padding: '0 2rem' }}>
-          <h2 className="font-serif text-3xl font-bold text-[hsl(var(--editorial-text))] mb-8">
+          <h2 className="font-sans text-3xl font-bold text-[hsl(var(--editorial-text))] mb-8">
             Related Stories
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -196,7 +196,7 @@ const Article = () => {
                   <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[hsl(var(--editorial-tag-bg))] text-[hsl(var(--editorial-tag))] mb-3">
                     {article.tag}
                   </span>
-                  <h3 className="font-serif text-xl font-bold text-[hsl(var(--editorial-text))] mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="font-sans text-xl font-bold text-[hsl(var(--editorial-text))] mb-2 group-hover:text-primary transition-colors">
                     {article.title}
                   </h3>
                   <p className="text-[hsl(var(--editorial-text-light))]">
