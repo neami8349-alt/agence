@@ -114,10 +114,10 @@ const Blog = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[hsl(var(--editorial-tag-bg))] text-[hsl(var(--editorial-tag))] mb-3">
+                  <span className="inline-block px-[0.2em] py-[0.1em] text-center text-transparent border-b-[0.15em] border-solid border-b-transparent bg-gradient-to-r from-[#8d49f7] to-[#6b53ff] bg-clip-text mb-3 hover:border-b-[#8d49f7] transition-colors">
                     {article.tag}
                   </span>
-                  <h2 className="font-sans text-2xl font-bold text-[hsl(var(--editorial-text))] mb-2 group-hover:text-primary transition-colors">
+                  <h2 className="font-sans text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
                     {article.title}
                   </h2>
                   <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">{article.description}</p>
