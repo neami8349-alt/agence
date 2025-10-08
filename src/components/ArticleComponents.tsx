@@ -6,7 +6,7 @@ interface ArticleProps {
 }
 
 export function Article({ children, className = "" }: ArticleProps) {
-  return <article className={`flex flex-col ${className}`}>{children}</article>;
+  return <article className={`flex flex-col text-[16px] ${className}`}>{children}</article>;
 }
 
 interface ArticleHeaderProps {
