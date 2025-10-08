@@ -20,21 +20,21 @@ const Article = () => {
   const relatedArticles = [
     {
       title: "Design Systems That Scale",
-      description: "Building maintainable design foundations",
+      description: "Building maintainable design foundations requires strategic planning and thoughtful execution. Here's how to create systems that grow with your team.",
       image: designSystemsImage,
       tag: "Design",
       slug: "design-systems-scale",
     },
     {
       title: "The Art of Storytelling",
-      description: "How narrative influences experience",
+      description: "How narrative influences experience and shapes the way users connect with your product. Learn the techniques that make stories unforgettable.",
       image: storytellingImage,
       tag: "Content",
       slug: "art-of-storytelling",
     },
     {
       title: "Sustainable Development",
-      description: "Creating with environmental consciousness",
+      description: "Creating with environmental consciousness is no longer optional. Discover practical approaches to building digital products that reduce carbon footprint.",
       image: sustainableDevImage,
       tag: "Innovation",
       slug: "sustainable-development",
