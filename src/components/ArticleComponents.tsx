@@ -169,6 +169,7 @@ export function ArticleContent({ children, className = "" }: ArticleContentProps
       [&_ul_li]:mb-[1em]
       [&_ol_li]:mb-[1em]
       [&_blockquote]:my-[2rem]
+      [&_figcaption]:max-w-[50rem] [&_figcaption]:mt-[0.5em] [&_figcaption]:mx-auto [&_figcaption]:mb-[1em] [&_figcaption]:text-[#545465] [&_figcaption]:text-[1.5rem] [&_figcaption]:italic [&_figcaption]:text-center
       [&_.blockquote-big]:text-center [&_.blockquote-big]:mt-[1.25rem] [&_.blockquote-big]:mb-[0.9375rem] [&_.blockquote-big]:md:mt-[1.875rem] [&_.blockquote-big]:md:mb-[1.875rem] [&_.blockquote-big]:lg:mt-[3.75rem] [&_.blockquote-big]:lg:mb-[3.75rem] [&_.blockquote-big]:md:mx-[calc(-18vw+6.875rem)] [&_.blockquote-big]:xl:mx-[-12.5rem]
       [&_.blockquote-big_blockquote]:font-sans [&_.blockquote-big_blockquote]:text-[calc(5vw+0.6rem)] [&_.blockquote-big_blockquote]:lg:text-[5.4rem] [&_.blockquote-big_blockquote]:font-extrabold [&_.blockquote-big_blockquote]:leading-[1.2]
       [&_.blockquote-big_figcaption]:text-[calc(2.5vw+0.8rem)] [&_.blockquote-big_figcaption]:lg:text-[3rem] [&_.blockquote-big_figcaption]:font-semibold [&_.blockquote-big_figcaption]:leading-[1.6] [&_.blockquote-big_figcaption]:md:leading-[1.4]
