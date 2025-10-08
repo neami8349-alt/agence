@@ -40,7 +40,7 @@ export default function ArticlePreview({
         <li className="inline">
           <a
             href={`/blog/${categorySlug}`}
-            className="py-[0.2em] px-0 pb-[0.1em] text-center text-transparent border-b-[0.15em] border-solid bg-gradient-to-r from-[#8d49f7] to-[#6b53ff] bg-clip-text [-webkit-text-fill-color:transparent]"
+            className="py-[0.2em] px-0 pb-[0.1em] text-center text-transparent border-b-[0.15em] border-solid inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-current [background-image:linear-gradient(90deg,#8d49f7_0%,#6b53ff_46%,#000_54%,#000_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[#334ac0] hover:bg-[position:0%_0] bg-clip-text [-webkit-text-fill-color:transparent]"
           >
             {category}
           </a>
