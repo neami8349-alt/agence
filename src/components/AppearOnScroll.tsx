@@ -1,4 +1,4 @@
-import { ReactElement, forwardRef, useEffect, useImperativeHandle, useRef, cloneElement } from 'react';
+import { ReactElement, forwardRef, useEffect, useImperativeHandle, useRef, cloneElement } from "react";
 
 interface AppearOnScrollProps {
   delay?: number;
@@ -6,59 +6,62 @@ interface AppearOnScrollProps {
   className?: string;
 }
 
-const AppearOnScroll = forwardRef<HTMLElement, AppearOnScrollProps>(
-  ({ delay = 0, children, className = '' }, ref) => {
-    const elementRef = useRef<HTMLElement>(null);
+const AppearOnScroll = forwardRef<HTMLElement, AppearOnScrollProps>(({ delay = 0, children, className = "" }, ref) => {
+  const elementRef = useRef<HTMLElement>(null);
 
-    useImperativeHandle(ref, () => elementRef.current as HTMLElement);
+  useImperativeHandle(ref, () => elementRef.current as HTMLElement);
 
-    const makeVisible = () => {
+  const makeVisible = () => {
+    if (elementRef.current) {
+      elementRef.current.style.opacity = "1";
+      elementRef.current.style.transform = "none";
+    }
+  };
+
+  useEffect(() => {
+    try {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              makeVisible();
+              observer.disconnect();
+            }
+          });
+        },
+        {
+          rootMargin: "0px 0px -120px 0px",
+        },
+      );
+
       if (elementRef.current) {
-        elementRef.current.classList.add('!opacity-100', '!translate-y-0');
+        observer.observe(elementRef.current);
       }
-    };
 
-    useEffect(() => {
-      try {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                makeVisible();
-                observer.disconnect();
-              }
-            });
-          },
-          {
-            rootMargin: '0px 0px -120px 0px',
-          }
-        );
+      return () => {
+        observer.disconnect();
+      };
+    } catch (error) {
+      // Fallback: make visible immediately if IntersectionObserver fails
+      makeVisible();
+    }
+  }, []);
 
-        if (elementRef.current) {
-          observer.observe(elementRef.current);
-        }
+  return cloneElement(children, {
+    ...children.props,
+    ref: elementRef,
+    style: {
+      ...children.props.style,
+      "--delay": `${delay}ms`,
+      opacity: 0,
+      transform: "translateY(8rem)", // 5rem × 1.6 = 8rem (10px base)
+      transition: "opacity 0.4s cubic-bezier(0.39, 0.57, 0.56, 1), transform 0.4s cubic-bezier(0.39, 0.57, 0.56, 1)",
+      transitionDelay: "var(--delay), var(--delay)",
+    } as React.CSSProperties,
+    className: `${className} ${children.props.className || ""} appear-on-scroll`,
+  });
+});
 
-        return () => {
-          observer.disconnect();
-        };
-      } catch (error) {
-        // Fallback: make visible immediately if IntersectionObserver fails
-        makeVisible();
-      }
-    }, []);
-
-    return cloneElement(children, {
-      ...children.props,
-      ref: elementRef,
-      style: {
-        ...children.props.style,
-        transitionDelay: `${delay}ms`,
-      },
-      className: `${className} ${children.props.className || ''} opacity-0 translate-y-[8rem] transition-[opacity,transform] duration-[400ms] ease-[cubic-bezier(0.39,0.57,0.56,1)]`,
-    });
-  }
-);
-
-AppearOnScroll.displayName = 'AppearOnScroll';
+AppearOnScroll.displayName = "AppearOnScroll";
 
 export default AppearOnScroll;
