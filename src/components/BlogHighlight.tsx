@@ -20,27 +20,39 @@ export default function BlogHighlight({
   className = "",
 }: BlogHighlightProps) {
   return (
-    <div
-      className={`relative flex items-center flex-col min-[960px]:flex-row justify-between min-[960px]:w-full ${className}`}
-    >
-      {/* Text Content */}
-      <div className="flex-[0_0_100%] min-[960px]:flex-[0_0_44%] w-full max-w-[80rem] py-[3rem] min-[640px]:py-[5rem] min-[960px]:py-[8rem] flex flex-col items-start text-left">
-        <h2 className="text-[3.4rem] min-[640px]:text-[4.2rem] min-[960px]:text-[6rem] font-extrabold leading-[1.25] min-[640px]:leading-[1.1] min-[960px]:leading-[1] mb-[1rem] min-[640px]:mb-[1.5rem] min-[960px]:mb-[2rem]">
+    <div className={`relative flex items-center justify-between flex-col lg:flex-row lg:w-full ${className}`}>
+      {/* Image - appears first on mobile, second on desktop (right side) */}
+      <figure className="flex-[0_0_100%] order-[-1] lg:order-1 lg:flex-[0_0_50%] lg:relative lg:flex lg:items-stretch lg:self-stretch lg:h-0 lg:my-[4rem] lg:pb-[60.9%] m-0">
+        <a href={href} className="block lg:absolute lg:inset-0 lg:flex">
+          <picture className="lg:flex lg:absolute lg:inset-0">
+            {imageSrcDesktop && <source media="(min-width: 1024px)" srcSet={imageSrcDesktop} />}
+            <img
+              alt={imageAlt}
+              src={imageSrc}
+              className="max-w-full h-auto align-middle transition-opacity duration-300 rounded-[0.6rem] lg:self-center lg:object-cover"
+            />
+          </picture>
+        </a>
+      </figure>
+
+      {/* Text Content - appears second on mobile, first on desktop (left side) */}
+      <div className="flex-[0_0_100%] lg:flex-[0_0_44%] w-full max-w-[80rem] py-[3rem] md:py-[5rem] lg:py-[8rem] flex flex-col items-start text-left">
+        <h2 className="text-[3.4rem] md:text-[4.2rem] lg:text-[6rem] font-extrabold leading-[1.25] md:leading-[1.1] lg:leading-[1] m-0 mb-[1rem] md:mb-[1.5rem] lg:mb-[2rem]">
           <a
             href={href}
             data-test-id="blog-overview-highlight"
-            className="mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-current bg-gradient-to-r from-[#8d49f7] via-[#6b53ff] to-current bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[position:0%_0]"
+            className="mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-current bg-gradient-to-r from-[#8d49f7] from-0% via-[#6b53ff] via-46% to-current to-54% bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[position:0%_0]"
           >
             {title}
           </a>
         </h2>
 
-        <p className="text-[#545465] break-words mb-[1em]">{description}</p>
+        <p className="text-[#545465] break-words m-0 mb-[1em]">{description}</p>
 
-        <p className="mb-0">
+        <p className="m-0">
           <a
             href={href}
-            className="inline-block mt-[2rem] no-underline text-[1.8rem] font-bold cursor-pointer border-none bg-none appearance-none"
+            className="inline-block mt-[2rem] no-underline text-[1.8rem] font-bold cursor-pointer text-[#334ac0] border-none bg-none appearance-none"
           >
             <span className="transition-[background-position,color] duration-500 ease-out text-[#9758fd] rounded-[0.1rem] bg-[#9758fd] bg-gradient-to-r from-[#9758fd] via-[#4c66f8] to-[#9758fd] bg-[length:200%_100%] bg-[position:100%_0] bg-clip-text [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[position:0%_0] inline-flex items-center gap-2">
               {linkText}
@@ -55,20 +67,6 @@ export default function BlogHighlight({
           </a>
         </p>
       </div>
-
-      {/* Image */}
-      <figure className="flex-[0_0_100%] order-[-1] min-[960px]:order-0 min-[960px]:flex-[0_0_50%] min-[960px]:relative min-[960px]:flex min-[960px]:items-stretch min-[960px]:self-stretch min-[960px]:h-0 min-[960px]:my-[4rem] min-[960px]:pb-[60.9%] m-0">
-        <a href={href} className="block min-[960px]:absolute min-[960px]:inset-0 min-[960px]:flex">
-          <picture className="min-[960px]:flex min-[960px]:absolute min-[960px]:inset-0">
-            {imageSrcDesktop && <source media="(min-width: 960px)" srcSet={imageSrcDesktop} />}
-            <img
-              alt={imageAlt}
-              src={imageSrc}
-              className="max-w-full h-auto align-middle transition-opacity duration-300 rounded-[0.6rem] min-[960px]:self-center min-[960px]:object-cover"
-            />
-          </picture>
-        </a>
-      </figure>
     </div>
   );
 }
