@@ -1,4 +1,5 @@
 import AppearOnScroll from './AppearOnScroll';
+import ArticlePreview from './ArticlePreview';
 
 interface RelatedItem {
   title: string;
@@ -23,26 +24,15 @@ export function ArticleRelatedItems({ items, className = "" }: ArticleRelatedIte
         {items.map((item, index) => (
           <AppearOnScroll key={item.slug} delay={index * 200}>
             <li>
-              <a href={`/article/${item.slug}`} className="block group">
-                <div className="relative aspect-[16/10] rounded-[1.6rem] overflow-hidden mb-[1.6rem]">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                {item.tag && (
-                  <span className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center text-transparent border-b-[0.15em] border-solid border-b-transparent bg-gradient-to-r from-[#8d49f7] to-[#6b53ff] bg-clip-text hover:border-b-[#8d49f7] transition-colors">
-                    {item.tag}
-                  </span>
-                )}
-                <h3 className="text-[2.2rem] md:text-[2.7rem] font-semibold leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
-                  {item.title}
-                </h3>
-                {item.description && (
-                  <p className="text-[#545465] leading-[1.6]">{item.description}</p>
-                )}
-              </a>
+              <ArticlePreview
+                title={item.title}
+                slug={item.slug}
+                image={item.image}
+                imageAlt={item.title}
+                category={item.tag || ''}
+                categorySlug={item.tag?.toLowerCase() || ''}
+                teaser={item.description || ''}
+              />
             </li>
           </AppearOnScroll>
         ))}

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Section from "@/components/Section";
+import ArticlePreview from "@/components/ArticlePreview";
 import heroImage from "@/assets/hero-creative-tech.jpg";
 import designSystemsImage from "@/assets/design-systems.jpg";
 import storytellingImage from "@/assets/storytelling.jpg";
@@ -13,7 +14,7 @@ import avatar3 from "@/assets/avatar-3.jpg";
 import avatar4 from "@/assets/avatar-4.jpg";
 
 const Blog = () => {
-  const articlesRef = useRef<(HTMLAnchorElement | null)[]>([]);
+  const articlesRef = useRef<(HTMLElement | null)[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
   const tagColors: Record<string, string> = {
@@ -293,37 +294,24 @@ const Blog = () => {
       <Section>
         <div className="flex gap-[4.347826087%]">
           {articles.map((article, index) => (
-            <Link
+            <div
               key={index}
-              to={`/article/${article.slug}`}
               ref={(el) => (articlesRef.current[index] = el)}
-              className="group blog-feed__item"
+              className="blog-feed__item"
               style={{
                 flex: "0 0 30.434783%",
               }}
             >
-              <article className="h-full">
-                <div className="relative aspect-[16/10] rounded-[10px] overflow-hidden bg-muted mb-4">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <span
-                  className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center transition-colors"
-                  style={{
-                    color: tagColors[article.tag] || "#8d49f7",
-                  }}
-                >
-                  {article.tag}
-                </span>
-                <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
-                  {article.title}
-                </h2>
-                <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">{article.description}</p>
-              </article>
-            </Link>
+              <ArticlePreview
+                title={article.title}
+                slug={article.slug}
+                image={article.image}
+                imageAlt={article.title}
+                category={article.tag}
+                categorySlug={article.tag.toLowerCase()}
+                teaser={article.description}
+              />
+            </div>
           ))}
         </div>
       </Section>
@@ -431,38 +419,25 @@ const Blog = () => {
           {allArticles
             .filter((article) => selectedCategory === "All" || article.tag === selectedCategory)
             .map((article, index) => (
-              <Link
+              <div
                 key={index}
-                to={`/article/${article.slug}`}
                 ref={(el) => (articlesRef.current[articles.length + opinions.length + index] = el)}
-                className="group blog-feed__item"
+                className="blog-feed__item"
                 style={{
                   flex: "0 0 30.434783%",
                   animationDelay: `${(index % 3) * 150}ms`,
                 }}
               >
-                <article className="h-full">
-                  <div className="relative aspect-[16/10] rounded-[10px] overflow-hidden bg-muted mb-4">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <span
-                    className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center transition-colors"
-                    style={{
-                      color: tagColors[article.tag] || "#8d49f7",
-                    }}
-                  >
-                    {article.tag}
-                  </span>
-                  <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
-                    {article.title}
-                  </h2>
-                  <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">{article.description}</p>
-                </article>
-              </Link>
+                <ArticlePreview
+                  title={article.title}
+                  slug={article.slug}
+                  image={article.image}
+                  imageAlt={article.title}
+                  category={article.tag}
+                  categorySlug={article.tag.toLowerCase()}
+                  teaser={article.description}
+                />
+              </div>
             ))}
         </div>
       </Section>
