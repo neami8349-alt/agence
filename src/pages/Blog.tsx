@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
-import Section from "@/components/Section"
+import Section from "@/components/Section";
 import heroImage from "@/assets/hero-creative-tech.jpg";
 import designSystemsImage from "@/assets/design-systems.jpg";
 import storytellingImage from "@/assets/storytelling.jpg";
@@ -257,49 +257,188 @@ const Blog = () => {
       <Header />
 
       <Section>
-          <div className="flex justify-between items-center gap-12">
-            <div className="space-y-6" style={{ flexBasis: "44%" }}>
-              <Link to={`/article/${featuredArticle.slug}`}>
-                <h1 className="font-sans text-[3.4rem] font-semibold text-[hsl(var(--editorial-text))] md:text-[4.2rem] md:leading-[1.1] lg:text-[6rem] lg:leading-[1] hover:text-primary transition-colors cursor-pointer">
-                  {featuredArticle.title}
-                </h1>
-              </Link>
-              <p className="text-[1.8rem] text-[hsl(var(--editorial-text-light))] leading-relaxed">
-                {featuredArticle.description}
-              </p>
-              <Link
-                to={`/article/${featuredArticle.slug}`}
-                className="inline-flex items-center text-[1.8rem] font-medium text-primary hover:underline group"
-              >
-                Read Story
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
+        <div className="flex justify-between items-center gap-12">
+          <div className="space-y-6" style={{ flexBasis: "44%" }}>
+            <Link to={`/article/${featuredArticle.slug}`}>
+              <h1 className="font-sans text-[3.4rem] font-semibold text-[hsl(var(--editorial-text))] md:text-[4.2rem] md:leading-[1.1] lg:text-[6rem] lg:leading-[1] hover:text-primary transition-colors cursor-pointer">
+                {featuredArticle.title}
+              </h1>
+            </Link>
+            <p className="text-[1.8rem] text-[hsl(var(--editorial-text-light))] leading-relaxed">
+              {featuredArticle.description}
+            </p>
             <Link
               to={`/article/${featuredArticle.slug}`}
-              className="block relative aspect-[23/28] rounded-[10px] overflow-hidden bg-muted my-[4rem] group"
-              style={{ flexBasis: "50%" }}
+              className="inline-flex items-center text-[1.8rem] font-medium text-primary hover:underline group"
             >
-              <img
-                src={featuredArticle.image}
-                alt={featuredArticle.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+              Read Story
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
+          <Link
+            to={`/article/${featuredArticle.slug}`}
+            className="block relative aspect-[23/28] rounded-[10px] overflow-hidden bg-muted my-[4rem] group"
+            style={{ flexBasis: "50%" }}
+          >
+            <img
+              src={featuredArticle.image}
+              alt={featuredArticle.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </Link>
+        </div>
       </Section>
 
       {/* Articles Grid */}
       <Section>
-          <div className="flex gap-[4.347826087%]">
-            {articles.map((article, index) => (
+        <div className="flex gap-[4.347826087%]">
+          {articles.map((article, index) => (
+            <Link
+              key={index}
+              to={`/article/${article.slug}`}
+              ref={(el) => (articlesRef.current[index] = el)}
+              className="group blog-feed__item"
+              style={{
+                flex: "0 0 30.434783%",
+              }}
+            >
+              <article className="h-full">
+                <div className="relative aspect-[16/10] rounded-[10px] overflow-hidden bg-muted mb-4">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <span
+                  className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center transition-colors"
+                  style={{
+                    color: tagColors[article.tag] || "#8d49f7",
+                  }}
+                >
+                  {article.tag}
+                </span>
+                <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
+                  {article.title}
+                </h2>
+                <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">{article.description}</p>
+              </article>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* Opinions Section */}
+      <Section>
+        <h2
+          className="text-[hsl(var(--editorial-text))]"
+          style={{
+            width: "100%",
+            marginBottom: "3rem",
+            padding: "1rem 0",
+            textAlign: "left",
+            letterSpacing: "0.2rem",
+            textTransform: "uppercase",
+            borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
+            fontSize: "1.6rem",
+            fontWeight: 600,
+            lineHeight: 1.5,
+          }}
+        >
+          Opinions
+        </h2>
+        <div style={{ display: "flex", gap: "3rem" }}>
+          {opinions.map((opinion, index) => (
+            <Link
+              key={index}
+              to={`/article/${opinion.slug}`}
+              ref={(el) => (articlesRef.current[articles.length + index] = el)}
+              className="group blog-feed__item"
+              style={{
+                flex: "0 0 calc(25% - 2.25rem)",
+                animationDelay: `${index * 150}ms`,
+              }}
+            >
+              <article className="h-full">
+                <div className="relative w-[60px] h-[60px] rounded-full overflow-hidden bg-muted mb-4">
+                  <img
+                    src={opinion.avatar}
+                    alt={opinion.author}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] text-left group-hover:text-primary transition-colors">
+                  {opinion.title}
+                </h2>
+              </article>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* More Articles Section */}
+      <Section>
+        <h2
+          className="text-[hsl(var(--editorial-text))]"
+          style={{
+            width: "100%",
+            marginBottom: "3rem",
+            padding: "1rem 0",
+            textAlign: "left",
+            letterSpacing: "0.2rem",
+            textTransform: "uppercase",
+            borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
+            fontSize: "1.6rem",
+            fontWeight: 600,
+            lineHeight: 1.5,
+          }}
+        >
+          More Articles
+        </h2>
+
+        {/* Category Filter Bar */}
+        <div
+          className="flex gap-4 mb-8 flex-wrap bg-background py-4 -mx-[calc(18vw-10rem)] px-[calc(18vw-10rem)] justify-center"
+          style={{
+            position: "sticky",
+            top: "72px",
+            zIndex: 10,
+          }}
+        >
+          {["All", "Design", "Development", "Innovation", "Content"].map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className="uppercase tracking-wide transition-colors"
+              style={{
+                display: "block",
+                padding: "0.5rem 1rem",
+                borderRadius: "0.6rem",
+                textDecoration: "none",
+                fontSize: "1.6rem",
+                lineHeight: "2rem",
+                fontWeight: 400,
+                backgroundColor: selectedCategory === category ? selectedCategoryStyle.bg : "transparent",
+                color: selectedCategory === category ? selectedCategoryStyle.text : "hsl(var(--foreground))",
+              }}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-[4.347826087%] gap-y-16">
+          {allArticles
+            .filter((article) => selectedCategory === "All" || article.tag === selectedCategory)
+            .map((article, index) => (
               <Link
                 key={index}
                 to={`/article/${article.slug}`}
-                ref={(el) => (articlesRef.current[index] = el)}
+                ref={(el) => (articlesRef.current[articles.length + opinions.length + index] = el)}
                 className="group blog-feed__item"
                 style={{
                   flex: "0 0 30.434783%",
+                  animationDelay: `${(index % 3) * 150}ms`,
                 }}
               >
                 <article className="h-full">
@@ -325,147 +464,8 @@ const Blog = () => {
                 </article>
               </Link>
             ))}
-          </div>
-        <Section>
-
-      {/* Opinions Section */}
-      <Section>
-          <h2
-            className="text-[hsl(var(--editorial-text))]"
-            style={{
-              width: "100%",
-              marginBottom: "3rem",
-              padding: "1rem 0",
-              textAlign: "left",
-              letterSpacing: "0.2rem",
-              textTransform: "uppercase",
-              borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
-              fontSize: "1.6rem",
-              fontWeight: 600,
-              lineHeight: 1.5,
-            }}
-          >
-            Opinions
-          </h2>
-          <div style={{ display: "flex", gap: "3rem" }}>
-            {opinions.map((opinion, index) => (
-              <Link
-                key={index}
-                to={`/article/${opinion.slug}`}
-                ref={(el) => (articlesRef.current[articles.length + index] = el)}
-                className="group blog-feed__item"
-                style={{
-                  flex: "0 0 calc(25% - 2.25rem)",
-                  animationDelay: `${index * 150}ms`,
-                }}
-              >
-                <article className="h-full">
-                  <div className="relative w-[60px] h-[60px] rounded-full overflow-hidden bg-muted mb-4">
-                    <img
-                      src={opinion.avatar}
-                      alt={opinion.author}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] text-left group-hover:text-primary transition-colors">
-                    {opinion.title}
-                  </h2>
-                </article>
-              </Link>
-            ))}
-          </div>
-        </Section>
-
-      {/* More Articles Section */}
-      <Section>
-          <h2
-            className="text-[hsl(var(--editorial-text))]"
-            style={{
-              width: "100%",
-              marginBottom: "3rem",
-              padding: "1rem 0",
-              textAlign: "left",
-              letterSpacing: "0.2rem",
-              textTransform: "uppercase",
-              borderBottom: "1px solid rgba(0, 0, 0, 0.2)",
-              fontSize: "1.6rem",
-              fontWeight: 600,
-              lineHeight: 1.5,
-            }}
-          >
-            More Articles
-          </h2>
-
-          {/* Category Filter Bar */}
-          <div
-            className="flex gap-4 mb-8 flex-wrap bg-background py-4 -mx-[calc(18vw-10rem)] px-[calc(18vw-10rem)] justify-center"
-            style={{
-              position: "sticky",
-              top: "72px",
-              zIndex: 10,
-            }}
-          >
-            {["All", "Design", "Development", "Innovation", "Content"].map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className="uppercase tracking-wide transition-colors"
-                style={{
-                  display: "block",
-                  padding: "0.5rem 1rem",
-                  borderRadius: "0.6rem",
-                  textDecoration: "none",
-                  fontSize: "1.6rem",
-                  lineHeight: "2rem",
-                  fontWeight: 400,
-                  backgroundColor: selectedCategory === category ? selectedCategoryStyle.bg : "transparent",
-                  color: selectedCategory === category ? selectedCategoryStyle.text : "hsl(var(--foreground))",
-                }}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap gap-[4.347826087%] gap-y-16">
-            {allArticles
-              .filter((article) => selectedCategory === "All" || article.tag === selectedCategory)
-              .map((article, index) => (
-                <Link
-                  key={index}
-                  to={`/article/${article.slug}`}
-                  ref={(el) => (articlesRef.current[articles.length + opinions.length + index] = el)}
-                  className="group blog-feed__item"
-                  style={{
-                    flex: "0 0 30.434783%",
-                    animationDelay: `${(index % 3) * 150}ms`,
-                  }}
-                >
-                  <article className="h-full">
-                    <div className="relative aspect-[16/10] rounded-[10px] overflow-hidden bg-muted mb-4">
-                      <img
-                        src={article.image}
-                        alt={article.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                    <span
-                      className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center transition-colors"
-                      style={{
-                        color: tagColors[article.tag] || "#8d49f7",
-                      }}
-                    >
-                      {article.tag}
-                    </span>
-                    <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
-                      {article.title}
-                    </h2>
-                    <p className="text-[hsl(var(--editorial-text-light))] leading-relaxed">{article.description}</p>
-                  </article>
-                </Link>
-              ))}
-          </div>
-        </Section>
+        </div>
+      </Section>
 
       {/* Footer */}
       <footer className="border-t border-border mt-24">
