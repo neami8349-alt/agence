@@ -40,7 +40,7 @@ export function ArticleRelatedItems({ items, className = "" }: ArticleRelatedIte
                   {item.title}
                 </h3>
                 {item.description && (
-                  <p className="text-[hsl(var(--editorial-text-light))]">{item.description}</p>
+                  <p className="text-[#545465] leading-[1.6]">{item.description}</p>
                 )}
               </a>
             </li>
