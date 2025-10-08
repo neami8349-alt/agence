@@ -114,7 +114,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-size: 1.6rem;
+    font-size: 1rem;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
@@ -122,12 +122,12 @@ All colors MUST be HSL.
     line-height: 2;
   }
   html {
-    font-size: 62.5%;
+    font-size: 16px;
   }
 
   @media (min-width: 40em) {
     body {
-      font-size: 1.8rem;
+      font-size: 1.125rem;
     }
   }
 }
