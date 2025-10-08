@@ -7,6 +7,7 @@ import {
   ArticleHero,
   ArticleContainer,
   ArticleContent,
+  TopShares,
 } from "@/components/ArticleComponents";
 import { ArticleRelatedItems } from "@/components/ArticleRelatedItems";
 import articleCoverImage from "@/assets/article-cover.jpg";
@@ -69,6 +70,11 @@ const Article = () => {
         />
 
         <ArticleContainer>
+          <TopShares
+            facebookUrl="https://www.facebook.com/sharer/sharer.php?u=https://example.com/article"
+            twitterUrl="https://twitter.com/intent/tweet?url=https://example.com/article"
+            linkedinUrl="https://www.linkedin.com/shareArticle?url=https://example.com/article"
+          />
           <ArticleContent>
             <p>
               In an era where technology evolves at breakneck speed, the intersection of artificial intelligence and

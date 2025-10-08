@@ -264,7 +264,6 @@ const Blog = () => {
           description={featuredArticle.description}
           href={`/article/${featuredArticle.slug}`}
           imageSrc={featuredArticle.image}
-          imageSrcDesktop={featuredArticle.image}
           imageAlt={featuredArticle.title}
         />
       </Section>
