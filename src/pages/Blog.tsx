@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
+import Section from "@/components/Section"
 import heroImage from "@/assets/hero-creative-tech.jpg";
 import designSystemsImage from "@/assets/design-systems.jpg";
 import storytellingImage from "@/assets/storytelling.jpg";
@@ -255,8 +256,7 @@ const Blog = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="animate-fade-in md:pb-[5rem] lg:pb-[8rem]" style={{ paddingTop: 0 }}>
-        <div className="mx-auto max-w-[1380px]" style={{ padding: "0 calc(18vw - 10rem)" }}>
+      <Section>
           <div className="flex justify-between items-center gap-12">
             <div className="space-y-6" style={{ flexBasis: "44%" }}>
               <Link to={`/article/${featuredArticle.slug}`}>
@@ -287,12 +287,10 @@ const Blog = () => {
               />
             </Link>
           </div>
-        </div>
-      </section>
+      </Section>
 
       {/* Articles Grid */}
-      <section className="pt-0 pb-16">
-        <div className="mx-auto max-w-[1380px]" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
+      <Section>
           <div className="flex gap-[4.347826087%]">
             {articles.map((article, index) => (
               <Link
@@ -328,12 +326,10 @@ const Blog = () => {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+        <Section>
 
       {/* Opinions Section */}
-      <section className="pt-0 pb-16">
-        <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
+      <Section>
           <h2
             className="text-[hsl(var(--editorial-text))]"
             style={{
@@ -378,12 +374,10 @@ const Blog = () => {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+        </Section>
 
       {/* More Articles Section */}
-      <section className="pt-0 pb-16">
-        <div className="mx-auto max-w-[1380px]" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
+      <Section>
           <h2
             className="text-[hsl(var(--editorial-text))]"
             style={{
@@ -471,8 +465,7 @@ const Blog = () => {
                 </Link>
               ))}
           </div>
-        </div>
-      </section>
+        </Section>
 
       {/* Footer */}
       <footer className="border-t border-border mt-24">
