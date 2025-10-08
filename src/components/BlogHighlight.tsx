@@ -1,67 +1,53 @@
-interface BlogHighlightProps {
+interface ArticlePreviewProps {
   title: string;
-  description: string;
-  linkText?: string;
-  href: string;
-  imageSrc: string;
+  slug: string;
+  image: string;
   imageAlt: string;
+  category: string;
+  categorySlug: string;
+  teaser: string;
   className?: string;
 }
 
-export default function BlogHighlight({
+export default function ArticlePreview({
   title,
-  description,
-  linkText = "Turn the page",
-  href,
-  imageSrc,
+  slug,
+  image,
   imageAlt,
+  category,
+  categorySlug,
+  teaser,
   className = "",
-}: BlogHighlightProps) {
+}: ArticlePreviewProps) {
   return (
-    <div className={`relative flex items-center justify-between flex-col lg:flex-row lg:w-full ${className}`}>
-      {/* Image - First on mobile (top), Second on desktop (right) */}
-      <figure className="w-full lg:w-1/2 order-[-1] lg:order-1 relative overflow-hidden rounded-[0.6rem] m-0 aspect-[5/3] lg:aspect-[23/28] lg:my-[4rem]">
-        <a href={href} className="block w-full h-full">
-          <img
-            alt={imageAlt}
-            src={imageSrc}
-            className="w-full h-full object-cover transition-opacity duration-300 rounded-[0.6rem]"
-          />
+    <article className={`relative flex flex-col ${className}`}>
+      <h3 className="mt-[0.3rem] mb-[1.5rem] text-[2.2rem] md:text-[2.7rem] leading-[1.4] font-semibold tracking-[-0.02em]">
+        <a
+          href={`/blog/${slug}`}
+          className="inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-current bg-gradient-to-r from-[#8d49f7] from-0% via-[#6b53ff] via-46% to-[#000] to-54% bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[#334ac0] hover:bg-[position:0%_0]"
+        >
+          {title}
+        </a>
+      </h3>
+
+      <figure className="relative order-[-1] mb-[2rem] pb-[71.43%] rounded-[0.6rem] overflow-hidden bg-gray-100">
+        <a href={`/blog/${slug}`} title={imageAlt}>
+          <img alt={imageAlt} src={image} className="absolute w-full h-full rounded-[0.6rem] object-cover" />
         </a>
       </figure>
 
-      {/* Text Content - Second on mobile (bottom), First on desktop (left) */}
-      <div className="w-full lg:w-[44%] max-w-[80rem] py-[3rem] md:py-[5rem] lg:py-[8rem] flex flex-col items-start text-left">
-        <h2 className="text-[3.4rem] md:text-[4.2rem] lg:text-[6rem] font-extrabold leading-[1.25] md:leading-[1.1] lg:leading-[1] m-0 mb-[1rem] md:mb-[1.5rem] lg:mb-[2rem]">
+      <ul className="order-[-1] list-none uppercase text-[#586ee0] text-[1.2rem] font-sans mb-[0.8rem]">
+        <li className="inline">
           <a
-            href={href}
-            data-test-id="blog-overview-highlight"
-            className="mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-current bg-gradient-to-r from-[#8d49f7] from-0% via-[#6b53ff] via-46% to-current to-54% bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[position:0%_0]"
+            href={`/blog/${categorySlug}`}
+            className="py-[0.2em] px-0 pb-[0.1em] text-center text-transparent border-b-[0.15em] border-solid bg-gradient-to-r from-[#8d49f7] to-[#6b53ff] bg-clip-text [-webkit-text-fill-color:transparent]"
           >
-            {title}
+            {category}
           </a>
-        </h2>
+        </li>
+      </ul>
 
-        <p className="text-[#545465] break-words m-0 mb-[1em]">{description}</p>
-
-        <p className="m-0">
-          <a
-            href={href}
-            className="inline-block mt-[2rem] no-underline text-[1.8rem] font-bold cursor-pointer border-none bg-none appearance-none"
-          >
-            <span className="transition-[background-position,color] duration-500 ease-out text-[#9758fd] rounded-[0.1rem] bg-[#9758fd] bg-gradient-to-r from-[#9758fd] via-[#4c66f8] to-[#9758fd] bg-[length:200%_100%] bg-[position:100%_0] bg-clip-text [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[position:0%_0] inline-flex items-center gap-2">
-              {linkText}
-              <svg height="8" viewBox="0 0 27 8" width="27" xmlns="http://www.w3.org/2000/svg" className="inline-block">
-                <path
-                  clipRule="evenodd"
-                  d="M23.172.464l3.182 3.182a.5.5 0 010 .708l-3.182 3.182a.5.5 0 11-.707-.708L24.793 4.5H0v-1h24.793l-2.328-2.328a.5.5 0 11.707-.708z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-          </a>
-        </p>
-      </div>
-    </div>
+      <p className="m-0 leading-[1.8] text-[#545465]">{teaser}</p>
+    </article>
   );
 }
