@@ -7,7 +7,7 @@ interface ArticleProps {
 
 export function Article({ children, className = '' }: ArticleProps) {
   return (
-    <article className={`flex flex-col ${className}`}>
+    <article className={`flex flex-col text-[1.125rem] ${className}`}>
       {children}
     </article>
   );
