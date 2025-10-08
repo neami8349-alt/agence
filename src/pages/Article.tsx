@@ -135,8 +135,8 @@ const Article = () => {
       </ArticleWrapper>
 
       {/* Related Articles */}
-      <section className="pt-0 pb-16">
-        <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
+      <section className="box-content max-w-[86.25rem] px-[0.9375rem] md:px-[calc(18vw-6.25rem)] mx-auto mt-[1.875rem] md:mt-[3.75rem] lg:mt-[5.625rem] mb-[1.875rem] md:mb-[3.75rem] lg:mb-[5.625rem]">
+        <div className="mx-auto" style={{ width: "100%", padding: "0" }}>
           <h2 className="font-sans text-3xl font-bold text-[hsl(var(--editorial-text))] mb-8">Related Stories</h2>
           <div className="flex gap-[4.347826087%]">
             {relatedArticles.map((article, index) => (
