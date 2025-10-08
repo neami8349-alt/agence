@@ -256,7 +256,7 @@ const Blog = () => {
       <Header />
 
       <section className="animate-fade-in md:pb-[5rem] lg:pb-[8rem]" style={{ paddingTop: 0 }}>
-        <div className="mx-auto" style={{ padding: "0 calc(18vw - 10rem)" }}>
+        <div className="mx-auto max-w-[1380px]" style={{ padding: "0 calc(18vw - 10rem)" }}>
           <div className="flex justify-between items-center gap-12">
             <div className="space-y-6" style={{ flexBasis: "44%" }}>
               <Link to={`/article/${featuredArticle.slug}`}>
@@ -292,7 +292,7 @@ const Blog = () => {
 
       {/* Articles Grid */}
       <section className="pt-0 pb-16">
-        <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
+        <div className="mx-auto max-w-[1380px]" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
           <div className="flex gap-[4.347826087%]">
             {articles.map((article, index) => (
               <Link
@@ -383,7 +383,7 @@ const Blog = () => {
 
       {/* More Articles Section */}
       <section className="pt-0 pb-16">
-        <div className="mx-auto" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
+        <div className="mx-auto max-w-[1380px]" style={{ width: "100%", padding: "0 calc(18vw - 10rem)" }}>
           <h2
             className="text-[hsl(var(--editorial-text))]"
             style={{
