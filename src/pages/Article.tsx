@@ -41,7 +41,7 @@ const Article = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-[1.125rem]">
+    <div className="min-h-screen bg-background">
       <Header />
 
       <ArticleWrapper>
