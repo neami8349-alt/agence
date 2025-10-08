@@ -8,6 +8,7 @@ import {
   ArticleContainer,
   ArticleContent,
 } from "@/components/ArticleComponents";
+import { ArticleRelatedItems } from "@/components/ArticleRelatedItems";
 import articleCoverImage from "@/assets/article-cover.jpg";
 import workspaceImage from "@/assets/workspace.jpg";
 import designSystemsImage from "@/assets/design-systems.jpg";
@@ -135,39 +136,9 @@ const Article = () => {
       </ArticleWrapper>
 
       {/* Related Articles */}
-      <section className="box-content max-w-[86.25rem] px-[0.9375rem] md:px-[calc(18vw-6.25rem)] mx-auto mt-[1.875rem] md:mt-[3.75rem] lg:mt-[5.625rem] mb-[1.875rem] md:mb-[3.75rem] lg:mb-[5.625rem]">
-        <div className="mx-auto" style={{ width: "100%", padding: "0" }}>
-          <h2 className="font-sans text-3xl font-bold text-[hsl(var(--editorial-text))] mb-8">Related Stories</h2>
-          <div className="flex gap-[4.347826087%]">
-            {relatedArticles.map((article, index) => (
-              <Link
-                key={index}
-                to={`/article/${article.slug}`}
-                className="group"
-                style={{
-                  flex: "0 0 30.434783%",
-                }}
-              >
-                <article>
-                  <div className="relative aspect-[16/10] rounded-[10px] overflow-hidden bg-muted mb-4">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <span className="inline-block px-[0.2em] py-[0.1em] text-[1.2rem] font-medium uppercase text-center text-transparent border-b-[0.15em] border-solid border-b-transparent bg-gradient-to-r from-[#8d49f7] to-[#6b53ff] bg-clip-text hover:border-b-[#8d49f7] transition-colors">
-                    {article.tag}
-                  </span>
-                  <h3 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] mt-[0.3rem] mb-[1.5rem] group-hover:text-primary transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="text-[hsl(var(--editorial-text-light))]">{article.description}</p>
-                </article>
-              </Link>
-            ))}
-          </div>
-        </div>
+      <section>
+        <h2 className="box-content max-w-[138rem] px-[1.5rem] md:px-[calc(18vw-10rem)] mx-auto font-sans text-3xl font-bold text-[hsl(var(--editorial-text))] mb-8">Related Stories</h2>
+        <ArticleRelatedItems items={relatedArticles} />
       </section>
 
       {/* Footer */}
