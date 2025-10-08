@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Section from "@/components/Section";
 import ArticlePreview from "@/components/ArticlePreview";
+import BlogHighlight from "@/components/BlogHighlight";
 import heroImage from "@/assets/hero-creative-tech.jpg";
 import designSystemsImage from "@/assets/design-systems.jpg";
 import storytellingImage from "@/assets/storytelling.jpg";
@@ -258,36 +259,13 @@ const Blog = () => {
       <Header />
 
       <Section>
-        <div className="flex justify-between items-center gap-12">
-          <div className="space-y-6" style={{ flexBasis: "44%" }}>
-            <Link to={`/article/${featuredArticle.slug}`}>
-              <h1 className="font-sans text-[3.4rem] font-semibold text-[hsl(var(--editorial-text))] md:text-[4.2rem] md:leading-[1.1] lg:text-[6rem] lg:leading-[1] hover:text-primary transition-colors cursor-pointer">
-                {featuredArticle.title}
-              </h1>
-            </Link>
-            <p className="text-[1.8rem] text-[hsl(var(--editorial-text-light))] leading-relaxed">
-              {featuredArticle.description}
-            </p>
-            <Link
-              to={`/article/${featuredArticle.slug}`}
-              className="inline-flex items-center text-[1.8rem] font-medium text-primary hover:underline group"
-            >
-              Read Story
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-          <Link
-            to={`/article/${featuredArticle.slug}`}
-            className="block relative aspect-[23/28] rounded-[10px] overflow-hidden bg-muted my-[4rem] group"
-            style={{ flexBasis: "50%" }}
-          >
-            <img
-              src={featuredArticle.image}
-              alt={featuredArticle.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-          </Link>
-        </div>
+        <BlogHighlight
+          title={featuredArticle.title}
+          description={featuredArticle.description}
+          href={`/article/${featuredArticle.slug}`}
+          imageSrc={featuredArticle.image}
+          imageAlt={featuredArticle.title}
+        />
       </Section>
 
       {/* Articles Grid */}
