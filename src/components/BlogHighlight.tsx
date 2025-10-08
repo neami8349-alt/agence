@@ -21,11 +21,11 @@ export default function BlogHighlight({
 }: BlogHighlightProps) {
   return (
     <div
-      className={`relative flex items-center flex-col min-[60rem]:flex-row justify-between min-[60rem]:w-full ${className}`}
+      className={`relative flex items-center flex-col min-[960px]:flex-row justify-between min-[960px]:w-full ${className}`}
     >
       {/* Text Content */}
-      <div className="flex-[0_0_100%] min-[60rem]:flex-[0_0_44%] w-full max-w-[80rem] py-[3rem] min-[40rem]:py-[5rem] min-[60rem]:py-[8rem] flex flex-col items-start text-left">
-        <h2 className="text-[3.4rem] min-[40rem]:text-[4.2rem] min-[60rem]:text-[6rem] font-extrabold leading-[1.25] min-[40rem]:leading-[1.1] min-[60rem]:leading-[1] mb-[1rem] min-[40rem]:mb-[1.5rem] min-[60rem]:mb-[2rem]">
+      <div className="flex-[0_0_100%] min-[960px]:flex-[0_0_44%] w-full max-w-[80rem] py-[3rem] min-[640px]:py-[5rem] min-[960px]:py-[8rem] flex flex-col items-start text-left">
+        <h2 className="text-[3.4rem] min-[640px]:text-[4.2rem] min-[960px]:text-[6rem] font-extrabold leading-[1.25] min-[640px]:leading-[1.1] min-[960px]:leading-[1] mb-[1rem] min-[640px]:mb-[1.5rem] min-[960px]:mb-[2rem]">
           <a
             href={href}
             data-test-id="blog-overview-highlight"
@@ -57,14 +57,14 @@ export default function BlogHighlight({
       </div>
 
       {/* Image */}
-      <figure className="flex-[0_0_100%] order-[-1] min-[60rem]:order-0 min-[60rem]:flex-[0_0_50%] min-[60rem]:relative min-[60rem]:flex min-[60rem]:items-stretch min-[60rem]:self-stretch min-[60rem]:h-0 min-[60rem]:my-[4rem] min-[60rem]:pb-[60.9%] m-0">
-        <a href={href} className="block min-[60rem]:absolute min-[60rem]:inset-0 min-[60rem]:flex">
-          <picture className="min-[60rem]:flex min-[60rem]:absolute min-[60rem]:inset-0">
+      <figure className="flex-[0_0_100%] order-[-1] min-[960px]:order-0 min-[960px]:flex-[0_0_50%] min-[960px]:relative min-[960px]:flex min-[960px]:items-stretch min-[960px]:self-stretch min-[960px]:h-0 min-[960px]:my-[4rem] min-[960px]:pb-[60.9%] m-0">
+        <a href={href} className="block min-[960px]:absolute min-[960px]:inset-0 min-[960px]:flex">
+          <picture className="min-[960px]:flex min-[960px]:absolute min-[960px]:inset-0">
             {imageSrcDesktop && <source media="(min-width: 960px)" srcSet={imageSrcDesktop} />}
             <img
               alt={imageAlt}
               src={imageSrc}
-              className="max-w-full h-auto align-middle transition-opacity duration-300 rounded-[0.6rem] min-[60rem]:self-center min-[60rem]:object-cover"
+              className="max-w-full h-auto align-middle transition-opacity duration-300 rounded-[0.6rem] min-[960px]:self-center min-[960px]:object-cover"
             />
           </picture>
         </a>
