@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
-import Section, { BlogSliderSection, SliderItem } from "@/components/Section";
+import Section from "@/components/Section";
 import ArticlePreview from "@/components/ArticlePreview";
 import BlogHighlight from "@/components/BlogHighlight";
 import heroImage from "@/assets/hero-creative-tech.jpg";
@@ -269,21 +269,30 @@ const Blog = () => {
       </Section>
 
       {/* Articles Grid */}
-      <BlogSliderSection>
-        {articles.map((article, index) => (
-          <SliderItem key={index} className="blog-feed__item">
-            <ArticlePreview
-              title={article.title}
-              slug={article.slug}
-              image={article.image}
-              imageAlt={article.title}
-              category={article.tag}
-              categorySlug={article.tag.toLowerCase()}
-              teaser={article.description}
-            />
-          </SliderItem>
-        ))}
-      </BlogSliderSection>
+      <Section>
+        <div className="flex gap-[4.347826087%]">
+          {articles.map((article, index) => (
+            <div
+              key={index}
+              ref={(el) => (articlesRef.current[index] = el)}
+              className="blog-feed__item"
+              style={{
+                flex: "0 0 30.434783%",
+              }}
+            >
+              <ArticlePreview
+                title={article.title}
+                slug={article.slug}
+                image={article.image}
+                imageAlt={article.title}
+                category={article.tag}
+                categorySlug={article.tag.toLowerCase()}
+                teaser={article.description}
+              />
+            </div>
+          ))}
+        </div>
+      </Section>
 
       {/* Opinions Section */}
       <Section>
