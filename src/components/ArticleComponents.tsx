@@ -1,16 +1,12 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 interface ArticleProps {
   children: ReactNode;
   className?: string;
 }
 
-export function Article({ children, className = '' }: ArticleProps) {
-  return (
-    <article className={`flex flex-col text-[1.125rem] ${className}`}>
-      {children}
-    </article>
-  );
+export function Article({ children, className = "" }: ArticleProps) {
+  return <article className={`flex flex-col] ${className}`}>{children}</article>;
 }
 
 interface ArticleHeaderProps {
@@ -24,12 +20,12 @@ interface ArticleHeaderProps {
   className?: string;
 }
 
-export function ArticleHeader({ title, date, author, className = '' }: ArticleHeaderProps) {
+export function ArticleHeader({ title, date, author, className = "" }: ArticleHeaderProps) {
   return (
-    <header className={`box-content max-w-[86.25rem] px-4 md:px-[calc(18vw-6.25rem)] mx-auto flex flex-col items-center mt-[2.8125rem] xl:mt-[3.75rem] ${className}`}>
-      <time className="block order-[-1] text-[#545465] text-[1.125rem]">
-        {date}
-      </time>
+    <header
+      className={`box-content max-w-[86.25rem] px-4 md:px-[calc(18vw-6.25rem)] mx-auto flex flex-col items-center mt-[2.8125rem] xl:mt-[3.75rem] ${className}`}
+    >
+      <time className="block order-[-1] text-[#545465] text-[1.125rem]">{date}</time>
 
       <h1 className="inline-block max-w-[62.5rem] mt-0 mb-[0.5em] text-[2.125rem] md:text-[2.625rem] lg:text-[3.75rem] font-extrabold tracking-[-0.01em] leading-[1.2] md:leading-[1] text-center">
         {title}
@@ -59,7 +55,7 @@ interface ArticleHeroProps {
   className?: string;
 }
 
-export function ArticleHero({ image, alt, className = '' }: ArticleHeroProps) {
+export function ArticleHero({ image, alt, className = "" }: ArticleHeroProps) {
   return (
     <figure className={`order-[-1] relative flex overflow-hidden w-full ${className}`}>
       <picture className="flex w-full justify-center">
@@ -78,9 +74,11 @@ interface ArticleContainerProps {
   className?: string;
 }
 
-export function ArticleContainer({ children, className = '' }: ArticleContainerProps) {
+export function ArticleContainer({ children, className = "" }: ArticleContainerProps) {
   return (
-    <div className={`box-content max-w-[40rem] px-4 md:px-[calc(18vw-6.25rem)] mx-auto relative leading-[1.6] mt-5 md:mt-[1.875rem] lg:mt-[3.75rem] ${className}`}>
+    <div
+      className={`box-content max-w-[40rem] px-4 md:px-[calc(18vw-6.25rem)] mx-auto relative leading-[1.6] mt-5 md:mt-[1.875rem] lg:mt-[3.75rem] ${className}`}
+    >
       {children}
     </div>
   );
@@ -103,7 +101,7 @@ export function TopShares({
   facebookIcon,
   twitterIcon,
   linkedinIcon,
-  className = ''
+  className = "",
 }: TopSharesProps) {
   return (
     <div className={`relative ${className}`}>
@@ -154,9 +152,10 @@ interface ArticleContentProps {
   className?: string;
 }
 
-export function ArticleContent({ children, className = '' }: ArticleContentProps) {
+export function ArticleContent({ children, className = "" }: ArticleContentProps) {
   return (
-    <div className={`
+    <div
+      className={`
       article-content
       [&_h2]:mt-[1.666em] [&_h2]:mb-[0.666em] [&_h2]:text-[1.125rem] [&_h2]:md:text-[1.3125rem] [&_h2]:lg:text-[1.6875rem] [&_h2]:font-semibold [&_h2]:tracking-[-0.02em] [&_h2]:leading-[1.6] [&_h2]:lg:leading-[1.4]
       [&_h2:first-child]:mt-0
@@ -179,7 +178,8 @@ export function ArticleContent({ children, className = '' }: ArticleContentProps
       [&_.blockquote-indented_figcaption]:text-[calc(2vw+0.5rem)] [&_.blockquote-indented_figcaption]:lg:text-[1.5rem] [&_.blockquote-indented_figcaption]:leading-[1.6] [&_.blockquote-indented_figcaption]:md:leading-[1.4]
       [&_.blockquote-indented_figcaption]:before:content-['―_']
       ${className}
-    `}>
+    `}
+    >
       {children}
     </div>
   );
