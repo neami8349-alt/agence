@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Section, { BlogSliderSection, SliderItem } from "@/components/Section";
@@ -16,6 +16,8 @@ import avatar3 from "@/assets/avatar-3.jpg";
 import avatar4 from "@/assets/avatar-4.jpg";
 
 const Blog = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   useEffect(() => {
     initFadeIn();
   }, []);
@@ -344,10 +346,11 @@ const Blog = () => {
             zIndex: 10,
           }}
         >
-          {["All", "Design", "Development", "Innovation", "Content"].map((category) => (
+        {["All", "Design", "Development", "Innovation", "Content"].map((category) => (
             <div
               key={category}
-              className="uppercase tracking-wide transition-colors"
+              onClick={() => setSelectedCategory(category)}
+              className="uppercase tracking-wide transition-colors cursor-pointer"
               style={{
                 display: "block",
                 padding: "0.5rem 1rem",
@@ -356,8 +359,8 @@ const Blog = () => {
                 fontSize: "1.6rem",
                 lineHeight: "2rem",
                 fontWeight: 400,
-                backgroundColor: category === "All" ? selectedCategoryStyle.bg : "transparent",
-                color: category === "All" ? selectedCategoryStyle.text : "hsl(var(--foreground))",
+                backgroundColor: category === selectedCategory ? selectedCategoryStyle.bg : "transparent",
+                color: category === selectedCategory ? selectedCategoryStyle.text : "hsl(var(--foreground))",
               }}
             >
               {category}
@@ -366,7 +369,9 @@ const Blog = () => {
         </div>
 
         <div className="flex flex-wrap gap-[4.347826087%] gap-y-16">
-          {allArticles.map((article, index) => (
+          {allArticles
+            .filter((article) => selectedCategory === "All" || article.tag === selectedCategory)
+            .map((article, index) => (
             <div
               key={index}
               className="blog-feed__item"
