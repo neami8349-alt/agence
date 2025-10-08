@@ -93,7 +93,7 @@ interface TopSharesProps {
 
 export function TopShares({ facebookUrl, twitterUrl, linkedinUrl, className = "" }: TopSharesProps) {
   return (
-    <div className={`${className}`}>
+    <div className={`${className} relative`}>
       <div className="flex w-[12rem] xl:w-[17rem] justify-between mx-auto mb-[2rem] xl:absolute xl:top-[-0.6rem] xl:left-0 xl:w-auto xl:pr-[3rem] xl:transform xl:-translate-x-full xl:flex-col xl:h-[17rem] xl:justify-evenly">
         <a
           href={facebookUrl}
