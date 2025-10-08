@@ -36,7 +36,7 @@ export default function BlogHighlight({
           <a
             href={href}
             data-test-id="blog-overview-highlight"
-            className="inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-black bg-gradient-to-r from-[#8d49f7] from-0% via-[#6b53ff] via-46% to-[#000] to-54% bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[#334ac0] hover:bg-[position:0%_0]"
+            className="inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-current [background-image:linear-gradient(90deg,#8d49f7_0%,#6b53ff_46%,#000_54%,#000_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[#334ac0] hover:bg-[position:0%_0]"
           >
             {title}
           </a>
