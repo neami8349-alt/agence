@@ -137,7 +137,6 @@ const Article = () => {
 
       {/* Related Articles */}
       <section>
-        <h2 className="box-content max-w-[138rem] px-[1.5rem] md:px-[calc(18vw-10rem)] mx-auto font-sans text-3xl font-bold text-[hsl(var(--editorial-text))] mb-8">Related Stories</h2>
         <ArticleRelatedItems items={relatedArticles} />
       </section>
 
