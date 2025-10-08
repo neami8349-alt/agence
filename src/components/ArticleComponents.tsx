@@ -6,7 +6,7 @@ interface ArticleProps {
 }
 
 export function Article({ children, className = "" }: ArticleProps) {
-  return <article className={`flex flex-col text-[16px] ${className}`}>{children}</article>;
+  return <article className={`flex flex-col ${className}`}>{children}</article>;
 }
 
 interface ArticleHeaderProps {
@@ -77,7 +77,7 @@ interface ArticleContainerProps {
 export function ArticleContainer({ children, className = "" }: ArticleContainerProps) {
   return (
     <div
-      className={`box-content max-w-[40rem] px-4 md:px-[calc(18vw-6.25rem)] mx-auto relative leading-[1.6] mt-5 md:mt-[1.875rem] lg:mt-[3.75rem] ${className}`}
+      className={`box-content max-w-[64rem] px-4 md:px-[calc(18vw-6.25rem)] mx-auto relative leading-[1.6] mt-5 md:mt-[1.875rem] lg:mt-[3.75rem] ${className}`}
     >
       {children}
     </div>
