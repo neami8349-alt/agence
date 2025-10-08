@@ -22,14 +22,14 @@ export default function BlogHighlight({
   return (
     <div className={`relative flex items-center justify-between flex-col lg:flex-row lg:w-full ${className}`}>
       {/* Image - appears first on mobile, second on desktop (right side) */}
-      <figure className="flex-[0_0_100%] order-[-1] lg:order-1 lg:flex-[0_0_50%] lg:relative lg:flex lg:items-stretch lg:self-stretch lg:h-0 lg:my-[4rem] lg:pb-[60.9%] m-0">
-        <a href={href} className="block lg:absolute lg:inset-0 lg:flex">
-          <picture className="lg:flex lg:absolute lg:inset-0">
+      <figure className="flex-[0_0_100%] order-[-1] lg:order-1 lg:flex-[0_0_50%] relative overflow-hidden rounded-[0.6rem] pb-[60%] lg:pb-0 lg:flex lg:items-stretch lg:self-stretch lg:h-0 lg:my-[4rem] m-0">
+        <a href={href} className="block absolute inset-0 lg:relative lg:inset-auto lg:flex">
+          <picture className="w-full h-full lg:flex lg:absolute lg:inset-0">
             {imageSrcDesktop && <source media="(min-width: 1024px)" srcSet={imageSrcDesktop} />}
             <img
               alt={imageAlt}
               src={imageSrc}
-              className="max-w-full h-auto align-middle transition-opacity duration-300 rounded-[0.6rem] lg:self-center lg:object-cover"
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 rounded-[0.6rem] lg:relative lg:self-center aspect-[5/3] lg:aspect-[23/28]"
             />
           </picture>
         </a>
