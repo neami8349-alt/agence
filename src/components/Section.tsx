@@ -26,7 +26,7 @@ export function BlogSliderSection({
     <div className={`w-full pb-[3rem] md:pb-[5rem] lg:pb-[8rem] ${className}`}>
       <div className="relative overflow-x-scroll pb-[7rem] scroll-smooth [scroll-snap-type:x_mandatory] [scrollbar-width:none] md:px-[calc(18vw-10rem)]">
         <div className="max-w-[138rem] mx-auto">
-          <ul className="flex overflow-x-visible items-start m-0 list-none animate-[fadeInUp_0.3s_ease-out_both] after:block after:ml-[-6.25%] after:content-[''] after:flex-[0_0_calc(-50%+50vw)] sm:after:ml-[-6.25%] lg:after:ml-[-4.34783%]">
+          <ul className="flex overflow-x-visible items-start m-0 list-none after:block after:ml-[-6.25%] after:content-[''] after:flex-[0_0_calc(-50%+50vw)] sm:after:ml-[-6.25%] lg:after:ml-[-4.34783%]">
             {children}
           </ul>
         </div>

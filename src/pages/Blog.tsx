@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Section, { BlogSliderSection, SliderItem } from "@/components/Section";
 import ArticlePreview from "@/components/ArticlePreview";
 import BlogHighlight from "@/components/BlogHighlight";
+import { initFadeIn } from "@/lib/fadeIn";
 import heroImage from "@/assets/hero-creative-tech.jpg";
 import designSystemsImage from "@/assets/design-systems.jpg";
 import storytellingImage from "@/assets/storytelling.jpg";
@@ -15,8 +16,9 @@ import avatar3 from "@/assets/avatar-3.jpg";
 import avatar4 from "@/assets/avatar-4.jpg";
 
 const Blog = () => {
-  const articlesRef = useRef<(HTMLElement | null)[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  useEffect(() => {
+    initFadeIn();
+  }, []);
 
   const tagColors: Record<string, string> = {
     All: "#000000",
@@ -31,25 +33,6 @@ const Blog = () => {
     text: "#00C0E8",
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fadeInUp");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }, // Changed from 0.5 to 0.1 - triggers earlier
-    );
-
-    articlesRef.current.forEach((article) => {
-      if (article) observer.observe(article);
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   const featuredArticle = {
     title: "The Future of Creative Technology",
@@ -271,7 +254,7 @@ const Blog = () => {
       {/* Articles Grid */}
       <BlogSliderSection>
         {articles.map((article, index) => (
-          <SliderItem key={index} className="blog-feed__item">
+          <SliderItem key={index} className="blog-feed__item" data-fade-in={index * 100}>
             <ArticlePreview
               title={article.title}
               slug={article.slug}
@@ -309,7 +292,6 @@ const Blog = () => {
             <Link
               key={index}
               to={`/article/${opinion.slug}`}
-              ref={(el) => (articlesRef.current[articles.length + index] = el)}
               className="group blog-feed__item"
               style={{
                 flex: "0 0 calc(25% - 2.25rem)",
@@ -363,9 +345,8 @@ const Blog = () => {
           }}
         >
           {["All", "Design", "Development", "Innovation", "Content"].map((category) => (
-            <button
+            <div
               key={category}
-              onClick={() => setSelectedCategory(category)}
               className="uppercase tracking-wide transition-colors"
               style={{
                 display: "block",
@@ -375,28 +356,25 @@ const Blog = () => {
                 fontSize: "1.6rem",
                 lineHeight: "2rem",
                 fontWeight: 400,
-                backgroundColor: selectedCategory === category ? selectedCategoryStyle.bg : "transparent",
-                color: selectedCategory === category ? selectedCategoryStyle.text : "hsl(var(--foreground))",
+                backgroundColor: category === "All" ? selectedCategoryStyle.bg : "transparent",
+                color: category === "All" ? selectedCategoryStyle.text : "hsl(var(--foreground))",
               }}
             >
               {category}
-            </button>
+            </div>
           ))}
         </div>
 
         <div className="flex flex-wrap gap-[4.347826087%] gap-y-16">
-          {allArticles
-            .filter((article) => selectedCategory === "All" || article.tag === selectedCategory)
-            .map((article, index) => (
-              <div
-                key={index}
-                ref={(el) => (articlesRef.current[articles.length + opinions.length + index] = el)}
-                className="blog-feed__item"
-                style={{
-                  flex: "0 0 30.434783%",
-                  animationDelay: `${(index % 3) * 150}ms`,
-                }}
-              >
+          {allArticles.map((article, index) => (
+            <div
+              key={index}
+              className="blog-feed__item"
+              style={{
+                flex: "0 0 30.434783%",
+                animationDelay: `${(index % 3) * 150}ms`,
+              }}
+            >
                 <ArticlePreview
                   title={article.title}
                   slug={article.slug}
