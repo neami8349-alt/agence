@@ -17,49 +17,53 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 12%;
 
-    --primary: 190 100% 46%;
+    /* Lifestyle gradient theme - Blue to Pink to Orange */
+    --primary: 217 100% 65%; /* #4E93FF */
     --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 215 86% 70%; /* #639CF2 */
+    --primary-glow: 195 100% 94%; /* #E4F9FF */
 
-    --secondary: 220 15% 96%;
-    --secondary-foreground: 220 20% 12%;
+    --secondary: 320 98% 74%; /* #FF7EEA */
+    --secondary-foreground: 0 0% 100%;
 
+    --accent: 27 100% 55%; /* #F38300 */
+    --accent-foreground: 0 0% 100%;
+    
+    --accent-red: 356 100% 56%; /* #F3DDID approximation */
+    
     --muted: 220 15% 96%;
     --muted-foreground: 220 15% 45%;
-
-    --accent: 15 85% 55%;
-    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 15% 88%;
     --input: 220 15% 88%;
-    --ring: 220 70% 45%;
+    --ring: 217 100% 65%;
 
-    --radius: 0.5rem;
+    --radius: 1.2rem;
 
-    /* Editorial-specific tokens */
+    /* Lifestyle editorial tokens */
     --editorial-text: 220 20% 15%;
     --editorial-text-light: 220 15% 45%;
-    --editorial-tag: 220 70% 45%;
-    --editorial-tag-bg: 220 80% 96%;
-    --editorial-hover: 220 15% 98%;
+    --editorial-tag: 217 100% 65%;
+    --editorial-tag-bg: 217 100% 95%;
+    --editorial-hover: 217 100% 98%;
+    
+    /* Gradient definitions */
+    --gradient-primary: linear-gradient(135deg, hsl(217 100% 65%), hsl(320 98% 74%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 100% 65%) 0%, hsl(215 86% 70%) 30%, hsl(320 98% 74%) 60%, hsl(27 100% 55%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(320 98% 74%), hsl(356 100% 56%), hsl(27 100% 55%));
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 217 100% 65%;
   }
 
   .dark {
@@ -72,38 +76,48 @@ All colors MUST be HSL.
     --popover: 220 20% 10%;
     --popover-foreground: 220 15% 95%;
 
-    --primary: 190 100% 50%;
+    --primary: 217 100% 70%;
     --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 215 86% 75%;
+    --primary-glow: 195 100% 30%;
 
-    --secondary: 220 20% 15%;
-    --secondary-foreground: 220 15% 95%;
+    --secondary: 320 98% 80%;
+    --secondary-foreground: 220 20% 10%;
 
+    --accent: 27 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    --accent-red: 356 100% 60%;
+    
     --muted: 220 20% 15%;
     --muted-foreground: 220 15% 60%;
-
-    --accent: 15 85% 60%;
-    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 20% 20%;
     --input: 220 20% 20%;
-    --ring: 220 70% 55%;
+    --ring: 217 100% 70%;
 
     --editorial-text: 220 15% 92%;
     --editorial-text-light: 220 15% 65%;
-    --editorial-tag: 220 70% 60%;
-    --editorial-tag-bg: 220 40% 20%;
+    --editorial-tag: 217 100% 70%;
+    --editorial-tag-bg: 217 40% 20%;
     --editorial-hover: 220 20% 12%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(217 100% 70%), hsl(320 98% 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 100% 70%) 0%, hsl(215 86% 75%) 30%, hsl(320 98% 80%) 60%, hsl(27 100% 60%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(320 98% 80%), hsl(356 100% 60%), hsl(27 100% 60%));
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 217 100% 70%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 217 100% 70%;
   }
 }
 

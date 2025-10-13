@@ -36,20 +36,20 @@ export default function BlogHighlight({
           <a
             href={href}
             data-test-id="blog-overview-highlight"
-            className="inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-current [background-image:linear-gradient(90deg,#8d49f7_0%,#6b53ff_46%,#000_54%,#000_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[#334ac0] hover:bg-[position:0%_0]"
+            className="inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-[var(--gradient-hero)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[position:0%_0]"
           >
             {title}
           </a>
         </h2>
 
-        <p className="text-[#545465] break-words m-0 mb-[1em]">{description}</p>
+        <p className="text-muted-foreground break-words m-0 mb-[1em]">{description}</p>
 
         <p className="m-0">
           <a
             href={href}
             className="inline-block mt-[2rem] no-underline text-[1.8rem] font-bold cursor-pointer border-none bg-none appearance-none"
           >
-            <span className="transition-[background-position,color] duration-500 ease-out text-[#9758fd] rounded-[0.1rem] bg-[#9758fd] bg-gradient-to-r from-[#9758fd] via-[#4c66f8] to-[#9758fd] bg-[length:200%_100%] bg-[position:100%_0] bg-clip-text [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[position:0%_0] inline-flex items-center gap-2">
+            <span className="transition-[background-position,color] duration-500 ease-out text-primary rounded-[0.1rem] bg-[var(--gradient-primary)] bg-[length:200%_100%] bg-[position:100%_0] bg-clip-text [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[position:0%_0] inline-flex items-center gap-2">
               {linkText}
               <svg height="8" viewBox="0 0 27 8" width="27" xmlns="http://www.w3.org/2000/svg" className="inline-block">
                 <path
