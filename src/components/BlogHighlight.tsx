@@ -36,7 +36,7 @@ export default function BlogHighlight({
           <a
             href={href}
             data-test-id="blog-overview-highlight"
-            className="inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-[var(--gradient-hero)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[position:0%_0]"
+            className="inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-gradient-to-r from-primary via-secondary to-accent bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0]"
           >
             {title}
           </a>
@@ -49,7 +49,7 @@ export default function BlogHighlight({
             href={href}
             className="inline-block mt-[2rem] no-underline text-[1.8rem] font-bold cursor-pointer border-none bg-none appearance-none"
           >
-            <span className="transition-[background-position,color] duration-500 ease-out text-primary rounded-[0.1rem] bg-[var(--gradient-primary)] bg-[length:200%_100%] bg-[position:100%_0] bg-clip-text [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[position:0%_0] inline-flex items-center gap-2">
+            <span className="transition-[background-position,color] duration-500 ease-out bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0] inline-flex items-center gap-2">
               {linkText}
               <svg height="8" viewBox="0 0 27 8" width="27" xmlns="http://www.w3.org/2000/svg" className="inline-block">
                 <path
