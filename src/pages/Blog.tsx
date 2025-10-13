@@ -368,7 +368,7 @@ const Blog = () => {
 
         {/* Category Filter Bar */}
         <div
-          className="flex gap-4 mb-8 flex-wrap bg-background py-4 -mx-[calc(18vw-10rem)] px-[calc(18vw-10rem)] justify-center"
+          className="flex gap-4 mb-8 flex-wrap bg-background py-4 justify-center w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
           style={{
             position: "sticky",
             top: "72px",
