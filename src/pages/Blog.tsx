@@ -337,8 +337,10 @@ const Blog = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] text-left group-hover:text-primary transition-colors">
-                  {opinion.title}
+                <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] text-left transition-[background-position] duration-[400ms]">
+                  <span className="inline-block mb-[-0.3em] pb-[0.3em] bg-current [background-image:linear-gradient(90deg,hsl(217_100%_65%)_0%,hsl(320_98%_74%)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent group-hover:bg-[position:0%_0]">
+                    {opinion.title}
+                  </span>
                 </h2>
               </article>
             </Link>
@@ -368,11 +370,13 @@ const Blog = () => {
 
         {/* Category Filter Bar */}
         <div
-          className="flex gap-4 mb-8 flex-wrap bg-background py-4 justify-center w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
+          className="flex gap-4 mb-8 flex-wrap bg-background py-4 justify-center w-screen relative left-1/2 right-1/2 ml-0 mr-0"
           style={{
             position: "sticky",
             top: "72px",
             zIndex: 10,
+            marginLeft: "calc(-50vw + 50%)",
+            marginRight: "calc(-50vw + 50%)",
           }}
         >
           {["All", "Wellness", "Home", "Travel", "Food", "Fashion", "Lifestyle"].map((category) => (
