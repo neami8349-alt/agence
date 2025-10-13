@@ -24,7 +24,7 @@ export default function ArticlePreview({
       <h3 className="mt-[0.3rem] mb-[1.5rem] text-[2.2rem] md:text-[2.7rem] leading-[1.4] font-semibold tracking-[-0.02em]">
         <a
           href={`/blog/${slug}`}
-          className="inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-current [background-image:linear-gradient(90deg,#8d49f7_0%,#6b53ff_46%,#000_54%,#000_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[#334ac0] hover:bg-[position:0%_0]"
+          className="inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-current [background-image:linear-gradient(90deg,hsl(217_100%_65%)_0%,hsl(320_98%_74%)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0]"
         >
           {title}
         </a>
@@ -36,18 +36,18 @@ export default function ArticlePreview({
         </a>
       </figure>
 
-      <ul className="order-[-1] list-none uppercase text-[#586ee0] text-[1.2rem] font-sans mb-[0.8rem]">
+      <ul className="order-[-1] list-none uppercase text-primary text-[1.2rem] font-sans mb-[0.8rem]">
         <li className="inline">
           <a
             href={`/blog/${categorySlug}`}
-            className="py-[0.2em] px-0 pb-[0.1em] text-center text-transparent border-b-[0.15em] border-solid inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-current [background-image:linear-gradient(90deg,#8d49f7_0%,#6b53ff_46%,#000_54%,#000_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] [-moz-text-fill-color:transparent] hover:bg-[#334ac0] hover:bg-[position:0%_0] bg-clip-text [-webkit-text-fill-color:transparent]"
+            className="py-[0.2em] px-0 pb-[0.1em] text-center text-transparent border-b-[0.15em] border-solid inline-block mb-[-0.3em] pb-[0.3em] transition-[background-position] duration-[400ms] ease-[cubic-bezier(0.45,0,0.55,1)] bg-current [background-image:linear-gradient(90deg,hsl(217_100%_65%)_0%,hsl(320_98%_74%)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0]"
           >
             {category}
           </a>
         </li>
       </ul>
 
-      <p className="m-0 leading-[1.8] text-[#545465]">{teaser}</p>
+      <p className="m-0 leading-[1.8] text-muted-foreground">{teaser}</p>
     </article>
   );
 }
