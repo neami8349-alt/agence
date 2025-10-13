@@ -1,4 +1,3 @@
-import { PenLine } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Twitter } from "lucide-react";
@@ -24,16 +23,8 @@ const Header = () => {
     >
       <div className="mx-auto h-full" style={{ padding: "0 calc(18vw - 10rem)" }}>
         <div className="flex items-center justify-between h-full">
-          <Link 
-            to="/" 
-            className="text-[2.4rem] font-bold tracking-tight transition-opacity hover:opacity-80 flex items-center gap-3"
-          >
-            <div className="bg-gradient-to-br from-primary via-secondary to-accent p-2 rounded-lg">
-              <PenLine className="w-6 h-6 text-white" strokeWidth={2.5} />
-            </div>
-            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Editorial
-            </span>
+          <Link to="/" className="font-sans text-2xl font-bold text-foreground">
+            Editorial
           </Link>
           <nav className="flex items-center gap-8">
             <Link
