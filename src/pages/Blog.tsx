@@ -5,10 +5,16 @@ import Header from "@/components/Header";
 import Section from "@/components/Section";
 import ArticlePreview from "@/components/ArticlePreview";
 import BlogHighlight from "@/components/BlogHighlight";
-import heroImage from "@/assets/hero-creative-tech.jpg";
-import designSystemsImage from "@/assets/design-systems.jpg";
-import storytellingImage from "@/assets/storytelling.jpg";
-import sustainableDevImage from "@/assets/sustainable-dev.jpg";
+import blog1 from "@/assets/blog-1.avif";
+import blog2 from "@/assets/blog-2.avif";
+import blog3 from "@/assets/blog-3.avif";
+import blog4 from "@/assets/blog-4.avif";
+import blog5 from "@/assets/blog-5.avif";
+import blog6 from "@/assets/blog-6.avif";
+import blog7 from "@/assets/blog-7.avif";
+import blog8 from "@/assets/blog-8.avif";
+import blog9 from "@/assets/blog-9.avif";
+import blog10 from "@/assets/blog-10.avif";
 import avatar1 from "@/assets/avatar-1.jpg";
 import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
@@ -59,7 +65,7 @@ const Blog = () => {
     title: "Living Your Best Life",
     description:
       "Discover the art of mindful living, wellness routines, and creating a lifestyle that brings joy, balance, and fulfillment to your everyday moments.",
-    image: "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?w=1200&q=80",
+    image: blog1,
     tag: "Lifestyle",
     slug: "living-your-best-life",
   };
@@ -68,21 +74,21 @@ const Blog = () => {
     {
       title: "Wellness & Self-Care Rituals",
       description: "Simple daily practices that transform your mental and physical wellbeing.",
-      image: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80",
+      image: blog2,
       tag: "Wellness",
       slug: "wellness-self-care",
     },
     {
       title: "Minimalist Home Design",
       description: "Creating serene spaces that inspire calm and creativity.",
-      image: "https://images.unsplash.com/photo-1545158535-c3f7168c28b6?w=800&q=80",
+      image: blog3,
       tag: "Home",
       slug: "minimalist-home",
     },
     {
       title: "Adventure & Travel",
       description: "Exploring the world with intention and embracing new experiences.",
-      image: "https://images.unsplash.com/photo-1527870950744-1c1c53067304?w=800&q=80",
+      image: blog4,
       tag: "Travel",
       slug: "adventure-travel",
     },
@@ -119,140 +125,140 @@ const Blog = () => {
     {
       title: "Morning Yoga Routines",
       description: "Start your day with energy and mindfulness through gentle movement.",
-      image: "https://images.unsplash.com/photo-1535060005458-66dd0b39142c?w=800&q=80",
+      image: blog5,
       tag: "Wellness",
       slug: "morning-yoga",
     },
     {
       title: "Plant-Based Kitchen Essentials",
       description: "Delicious and nourishing recipes for vibrant living.",
-      image: "https://images.unsplash.com/photo-1560105196-e8bb5cfbe487?w=800&q=80",
+      image: blog6,
       tag: "Food",
       slug: "plant-based-kitchen",
     },
     {
       title: "Sustainable Fashion Choices",
       description: "Building a conscious wardrobe that reflects your values.",
-      image: "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?w=800&q=80",
+      image: blog7,
       tag: "Fashion",
       slug: "sustainable-fashion",
     },
     {
       title: "Digital Detox Weekends",
       description: "Reclaim your time and reconnect with what matters most.",
-      image: "https://images.unsplash.com/photo-1549298222-1cadb3b33c99?w=800&q=80",
+      image: blog8,
       tag: "Wellness",
       slug: "digital-detox",
     },
     {
       title: "Cozy Reading Nooks",
       description: "Creating intimate spaces for reflection and literature.",
-      image: "https://images.unsplash.com/photo-1545158535-c3f7168c28b6?w=800&q=80",
+      image: blog9,
       tag: "Home",
       slug: "reading-nooks",
     },
     {
       title: "Mindful Photography",
       description: "Capturing life's beautiful moments with intention.",
-      image: "https://images.unsplash.com/photo-1533158628620-e2d8b77a0b8f?w=800&q=80",
+      image: blog10,
       tag: "Creative",
       slug: "mindful-photography",
     },
     {
       title: "Weekend Getaway Guide",
       description: "Exploring nearby destinations for quick refreshment.",
-      image: "https://images.unsplash.com/photo-1527870950744-1c1c53067304?w=800&q=80",
+      image: blog1,
       tag: "Travel",
       slug: "weekend-getaways",
     },
     {
       title: "Aromatherapy at Home",
       description: "Using natural scents to enhance mood and atmosphere.",
-      image: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80",
+      image: blog2,
       tag: "Wellness",
       slug: "aromatherapy",
     },
     {
       title: "Urban Gardening Tips",
       description: "Growing your own herbs and vegetables in small spaces.",
-      image: "https://images.unsplash.com/photo-1534237886190-ced735ca4b73?w=800&q=80",
+      image: blog3,
       tag: "Home",
       slug: "urban-gardening",
     },
     {
       title: "Journaling for Clarity",
       description: "Writing practices that unlock self-discovery and peace.",
-      image: "https://images.unsplash.com/photo-1533158628620-e2d8b77a0b8f?w=800&q=80",
+      image: blog4,
       tag: "Wellness",
       slug: "journaling",
     },
     {
       title: "Outdoor Fitness Adventures",
       description: "Taking your workout beyond the gym walls.",
-      image: "https://images.unsplash.com/photo-1535060005458-66dd0b39142c?w=800&q=80",
+      image: blog5,
       tag: "Fitness",
       slug: "outdoor-fitness",
     },
     {
       title: "Tea Culture & Rituals",
       description: "Discovering tranquility in the ancient art of tea.",
-      image: "https://images.unsplash.com/photo-1560105196-e8bb5cfbe487?w=800&q=80",
+      image: blog6,
       tag: "Food",
       slug: "tea-culture",
     },
     {
       title: "Vintage Finds & Treasures",
       description: "The joy of thrifting and giving items new life.",
-      image: "https://images.unsplash.com/photo-1549298222-1cadb3b33c99?w=800&q=80",
+      image: blog7,
       tag: "Fashion",
       slug: "vintage-finds",
     },
     {
       title: "Evening Wind-Down Routine",
       description: "Preparing mind and body for restful sleep.",
-      image: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80",
+      image: blog8,
       tag: "Wellness",
       slug: "evening-routine",
     },
     {
       title: "Artisan Coffee Culture",
       description: "Appreciating the craft behind every perfect cup.",
-      image: "https://images.unsplash.com/photo-1534237886190-ced735ca4b73?w=800&q=80",
+      image: blog9,
       tag: "Food",
       slug: "coffee-culture",
     },
     {
       title: "Coastal Living Inspiration",
       description: "Bringing beachside serenity into your everyday life.",
-      image: "https://images.unsplash.com/photo-1527870950744-1c1c53067304?w=800&q=80",
+      image: blog10,
       tag: "Lifestyle",
       slug: "coastal-living",
     },
     {
       title: "DIY Natural Beauty",
       description: "Creating skincare products from simple ingredients.",
-      image: "https://images.unsplash.com/photo-1545158535-c3f7168c28b6?w=800&q=80",
+      image: blog1,
       tag: "Wellness",
       slug: "natural-beauty",
     },
     {
       title: "Bohemian Interior Style",
       description: "Embracing free-spirited decor and personal expression.",
-      image: "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?w=800&q=80",
+      image: blog2,
       tag: "Home",
       slug: "bohemian-interior",
     },
     {
       title: "Solo Travel Adventures",
       description: "Finding yourself while exploring the world alone.",
-      image: "https://images.unsplash.com/photo-1533158628620-e2d8b77a0b8f?w=800&q=80",
+      image: blog3,
       tag: "Travel",
       slug: "solo-travel",
     },
     {
       title: "Sustainable Living Hacks",
       description: "Simple swaps for an eco-friendly lifestyle.",
-      image: "https://images.unsplash.com/photo-1534237886190-ced735ca4b73?w=800&q=80",
+      image: blog4,
       tag: "Lifestyle",
       slug: "sustainable-living",
     },
