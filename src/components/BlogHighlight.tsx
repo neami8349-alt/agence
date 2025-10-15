@@ -32,7 +32,7 @@ export default function BlogHighlight({
 
       {/* Text Content - Second on mobile (bottom), First on desktop (left) */}
       <div className="w-full lg:w-[44%] max-w-[80rem] py-[3rem] md:py-[5rem] lg:py-[8rem] flex flex-col items-start text-left">
-        <h2 className="text-[3.4rem] md:text-[4.2rem] lg:text-[6rem] font-extrabold leading-[1.25] md:leading-[1.1] lg:leading-[1] m-0 mb-[1rem] md:mb-[1.5rem] lg:mb-[2rem]">
+        <h2 className="text-[3.4rem] md:text-[4.2rem] lg:text-[6rem] font-medium leading-[1.25] md:leading-[1.1] lg:leading-[1] m-0 mb-[1rem] md:mb-[1.5rem] lg:mb-[2rem]">
           <a
             href={href}
             data-test-id="blog-overview-highlight"
