@@ -284,7 +284,7 @@ const Blog = () => {
         className="relative overflow-x-scroll scroll-smooth snap-x snap-mandatory pb-28 [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] [scrollbar-width:none] 
   [&::-webkit-scrollbar]:hidden"
       >
-        <div className="m-0 flex list-none items-start overflow-x-visible after:ml-[-6.25%] after:block after:flex-[0_0_calc(50vw-50%)] after:content-[''] lg:after:ml-[-4.347826087%]">
+        <div className="m-0 flex w-full list-none items-start overflow-x-visible after:ml-[-6.25%] after:block after:flex-[0_0_calc(50vw-50%)] after:content-[''] lg:after:ml-[-4.347826087%]">
           {articles.map((article, index) => (
             <div
               key={index}
