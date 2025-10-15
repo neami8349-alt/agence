@@ -26,7 +26,7 @@ import malmo05 from "@/assets/malmo/malmo-05.avif";
 import malmo12 from "@/assets/malmo/malmo-12.avif";
 
 // Author avatar
-import avatar1 from "@/assets/avatar-1.jpg";
+import authorMarcus from "@/assets/author-marcus.jpg";
 
 const Article = () => {
   const relatedArticles = [
@@ -79,7 +79,7 @@ const Article = () => {
           author={{
             name: "Marcus Lindström",
             title: "Architecture Photographer",
-            avatar: avatar1,
+            avatar: authorMarcus,
           }}
         />
 

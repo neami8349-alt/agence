@@ -15,6 +15,7 @@ import blog7 from "@/assets/blog-7.avif";
 import blog8 from "@/assets/blog-8.avif";
 import blog9 from "@/assets/blog-9.avif";
 import blog10 from "@/assets/blog-10.avif";
+import articleCover from "@/assets/article-cover.jpg";
 import avatar1 from "@/assets/avatar-1.jpg";
 import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
@@ -62,12 +63,12 @@ const Blog = () => {
   }, []);
 
   const featuredArticle = {
-    title: "Modern Architecture Meets Nature",
+    title: "MLMO: Capturing Malmö's Architectural Renaissance",
     description:
-      "Exploring the seamless integration of contemporary design with natural landscapes, where glass, concrete, and greenery create harmonious living spaces.",
-    image: blog1,
-    tag: "Home",
-    slug: "modern-architecture-nature",
+      "From industrial port to architectural laboratory—a photographer's journey through Malmö's transformation into one of Scandinavia's most daring design capitals.",
+    image: articleCover,
+    tag: "Architecture",
+    slug: "mlmo-architectural-renaissance",
   };
 
   const articles = [
@@ -76,21 +77,21 @@ const Blog = () => {
       description: "Clean lines and open concepts that redefine contemporary living.",
       image: blog2,
       tag: "Home",
-      slug: "minimalist-interiors",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Light and Shadow in Design",
       description: "How natural light transforms architectural spaces throughout the day.",
       image: blog3,
       tag: "Home",
-      slug: "light-shadow-design",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Urban Residential Architecture",
       description: "Innovative housing solutions for modern city living.",
       image: blog4,
       tag: "Home",
-      slug: "urban-residential",
+      slug: "mlmo-architectural-renaissance",
     },
   ];
 
@@ -99,25 +100,25 @@ const Blog = () => {
       title: "Finding Balance in a Busy World",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
       author: "Emma Thompson",
-      slug: "finding-balance",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "The Joy of Slow Living",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
       author: "Marcus Chen",
-      slug: "slow-living",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Building Meaningful Connections",
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
       author: "Sofia Rodriguez",
-      slug: "meaningful-connections",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Embracing Change & Growth",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
       author: "James Wilson",
-      slug: "embracing-change",
+      slug: "mlmo-architectural-renaissance",
     },
   ];
 
@@ -127,140 +128,140 @@ const Blog = () => {
       description: "Transparent walls that blur the boundary between indoors and outdoors.",
       image: blog5,
       tag: "Home",
-      slug: "glass-box-living",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Concrete and Wood Harmony",
       description: "The perfect balance of industrial and natural materials.",
       image: blog6,
       tag: "Home",
-      slug: "concrete-wood-harmony",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Sustainable Building Design",
       description: "Eco-conscious architecture that respects the environment.",
       image: blog7,
       tag: "Home",
-      slug: "sustainable-building",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Geometric Facades",
       description: "Bold angular designs that make powerful architectural statements.",
       image: blog8,
       tag: "Home",
-      slug: "geometric-facades",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Open Floor Plans",
       description: "Flexible living spaces that adapt to modern lifestyles.",
       image: blog9,
       tag: "Home",
-      slug: "open-floor-plans",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Natural Light Optimization",
       description: "Strategic window placement for sun-filled interiors.",
       image: blog10,
       tag: "Home",
-      slug: "natural-light-optimization",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Rooftop Gardens",
       description: "Bringing nature to elevated urban spaces.",
       image: blog1,
       tag: "Home",
-      slug: "rooftop-gardens",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Texture in Modern Design",
       description: "Layering materials for depth and visual interest.",
       image: blog2,
       tag: "Home",
-      slug: "texture-modern-design",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Indoor-Outdoor Living",
       description: "Seamless transitions between interior and exterior spaces.",
       image: blog3,
       tag: "Home",
-      slug: "indoor-outdoor-living",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Contemporary Kitchen Design",
       description: "Sleek, functional spaces for the modern home chef.",
       image: blog4,
       tag: "Home",
-      slug: "contemporary-kitchen",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Statement Staircases",
       description: "Sculptural elements that become the focal point of any space.",
       image: blog5,
       tag: "Home",
-      slug: "statement-staircases",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Neutral Color Palettes",
       description: "Timeless tones that create calm, sophisticated interiors.",
       image: blog6,
       tag: "Home",
-      slug: "neutral-color-palettes",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Smart Home Integration",
       description: "Technology seamlessly woven into architectural design.",
       image: blog7,
       tag: "Home",
-      slug: "smart-home-integration",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Floating Architecture",
       description: "Cantilevered structures that defy gravity.",
       image: blog8,
       tag: "Home",
-      slug: "floating-architecture",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Minimalist Bathrooms",
       description: "Spa-like sanctuaries with clean, modern aesthetics.",
       image: blog9,
       tag: "Home",
-      slug: "minimalist-bathrooms",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Courtyard Homes",
       description: "Private outdoor spaces at the heart of residential design.",
       image: blog10,
       tag: "Home",
-      slug: "courtyard-homes",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Industrial Chic Interiors",
       description: "Exposed beams and raw materials create urban elegance.",
       image: blog1,
       tag: "Home",
-      slug: "industrial-chic",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Window Wall Designs",
       description: "Floor-to-ceiling glass for maximum views and natural light.",
       image: blog2,
       tag: "Home",
-      slug: "window-wall-designs",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Compact Living Solutions",
       description: "Maximizing small spaces through smart design.",
       image: blog3,
       tag: "Home",
-      slug: "compact-living",
+      slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Architectural Lighting",
       description: "Illumination as a design element in modern homes.",
       image: blog4,
       tag: "Home",
-      slug: "architectural-lighting",
+      slug: "mlmo-architectural-renaissance",
     },
   ];
 
