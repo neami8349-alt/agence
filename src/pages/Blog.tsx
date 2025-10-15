@@ -324,7 +324,7 @@ const Blog = () => {
         >
           Opinions
         </h2>
-        <div style={{ display: "flex", gap: "3rem" }}>
+        <div className="m-0 grid w-full list-none gap-12 p-0 text-left sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] 2xl:gap-24">
           {opinions.map((opinion, index) => (
             <Link
               key={index}
