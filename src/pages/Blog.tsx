@@ -15,7 +15,7 @@ import blog7 from "@/assets/blog-7.avif";
 import blog8 from "@/assets/blog-8.avif";
 import blog9 from "@/assets/blog-9.avif";
 import blog10 from "@/assets/blog-10.avif";
-import articleCover from "@/assets/article-cover.jpg";
+import malmoHero from "@/assets/malmo/malmo-hero.jpg";
 import avatar1 from "@/assets/avatar-1.jpg";
 import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
@@ -66,7 +66,7 @@ const Blog = () => {
     title: "MLMO: Capturing Malmö's Architectural Renaissance",
     description:
       "From industrial port to architectural laboratory—a photographer's journey through Malmö's transformation into one of Scandinavia's most daring design capitals.",
-    image: articleCover,
+    image: malmoHero,
     tag: "Architecture",
     slug: "mlmo-architectural-renaissance",
   };
