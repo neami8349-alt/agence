@@ -417,7 +417,6 @@ const Blog = () => {
                 ref={(el) => (articlesRef.current[articles.length + opinions.length + index] = el)}
                 className="blog-feed__item"
                 style={{
-                  flex: "0 0 30.434783%",
                   animationDelay: `${(index % 3) * 150}ms`,
                 }}
               >
