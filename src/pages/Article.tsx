@@ -21,21 +21,24 @@ const Article = () => {
   const relatedArticles = [
     {
       title: "Design Systems That Scale",
-      description: "Building maintainable design foundations requires strategic planning and thoughtful execution. Here's how to create systems that grow with your team.",
+      description:
+        "Building maintainable design foundations requires strategic planning and thoughtful execution. Here's how to create systems that grow with your team.",
       image: designSystemsImage,
       tag: "Design",
       slug: "design-systems-scale",
     },
     {
       title: "The Art of Storytelling",
-      description: "How narrative influences experience and shapes the way users connect with your product. Learn the techniques that make stories unforgettable.",
+      description:
+        "How narrative influences experience and shapes the way users connect with your product. Learn the techniques that make stories unforgettable.",
       image: storytellingImage,
       tag: "Content",
       slug: "art-of-storytelling",
     },
     {
       title: "Sustainable Development",
-      description: "Creating with environmental consciousness is no longer optional. Discover practical approaches to building digital products that reduce carbon footprint.",
+      description:
+        "Creating with environmental consciousness is no longer optional. Discover practical approaches to building digital products that reduce carbon footprint.",
       image: sustainableDevImage,
       tag: "Innovation",
       slug: "sustainable-development",
@@ -52,7 +55,7 @@ const Article = () => {
         <div className="box-content max-w-[86.25rem] px-4 md:px-[calc(18vw-6.25rem)] mx-auto mt-8">
           <Link
             to="/blog"
-            className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
+            className="inline-flex items-center text-[14px] font-medium text-muted-foreground hover:text-foreground transition-colors group"
           >
             <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
             Back to Stories
