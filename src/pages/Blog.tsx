@@ -286,10 +286,7 @@ const Blog = () => {
             <div
               key={index}
               ref={(el) => (articlesRef.current[index] = el)}
-              className="blog-feed__item"
-              style={{
-                flex: "0 0 30.434783%",
-              }}
+              className="m-0 mr-[6.25%] inline-flex max-w-[42rem] flex-[0_0_80%] scroll-snap-align-center sm:flex-[0_0_43.75%] lg:mr-[4.347826087%] lg:flex-[0_0_30.434783%]"
             >
               <ArticlePreview
                 title={article.title}
