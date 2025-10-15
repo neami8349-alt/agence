@@ -408,7 +408,7 @@ const Blog = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-[4.347826087%] gap-y-16">
+        <div className="grid list-none gap-x-16 gap-y-24 py-8 text-left sm:grid-cols-2 lg:grid-cols-3">
           {allArticles
             .filter((article) => selectedCategory === "All" || article.tag === selectedCategory)
             .map((article, index) => (
