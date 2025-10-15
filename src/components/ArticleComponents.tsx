@@ -27,7 +27,7 @@ export function ArticleHeader({ title, date, author, className = "" }: ArticleHe
     >
       <time className="block order-[-1] text-[#545465] text-[1.8rem]">{date}</time>
 
-      <h1 className="inline-block max-w-[100rem] mt-0 mb-[0.5em] text-[3.4rem] md:text-[4.2rem] lg:text-[6rem] font-extrabold tracking-[-0.01em] leading-[1.2] md:leading-[1] text-center">
+      <h1 className="inline-block max-w-[100rem] mt-0 mb-[0.5em] text-[3.4rem] md:text-[4.2rem] lg:text-[6rem] font-semibold tracking-[-0.01em] leading-[1.2] md:leading-[1] text-center">
         {title}
       </h1>
 
