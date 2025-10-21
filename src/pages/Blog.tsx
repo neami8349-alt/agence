@@ -93,6 +93,20 @@ const Blog = () => {
       tag: "Home",
       slug: "mlmo-architectural-renaissance",
     },
+    {
+      title: "Sustainable Building Design",
+      description: "Eco-conscious architecture that respects the environment.",
+      image: blog7,
+      tag: "Home",
+      slug: "mlmo-architectural-renaissance",
+    },
+    {
+      title: "Geometric Facades",
+      description: "Bold angular designs that make powerful architectural statements.",
+      image: blog8,
+      tag: "Home",
+      slug: "mlmo-architectural-renaissance",
+    },
   ];
 
   const opinions = [
