@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Twitter } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,30 +26,144 @@ const Header = () => {
       }`}
       style={{ height: "72px" }}
     >
-      <div className="mx-auto h-full" style={{ padding: "0 calc(18vw - 10rem)" }}>
-        <div className="flex items-center justify-between h-full">
-          <Link to="/" className="font-sans text-2xl font-bold text-foreground">
+      <div className="mx-auto h-full px-6 md:px-[calc(18vw-10rem)]">
+        <div className="flex items-center justify-between h-full max-w-[138rem]">
+          <Link
+            to="/"
+            className="font-sans text-[21px] font-bold text-foreground"
+          >
             Editorial
           </Link>
-          <nav className="flex items-center gap-8">
-            <Link
-              to="/blog"
-              className="text-[1.8rem] font-medium text-muted-foreground hover:text-foreground transition-colors"
+
+          {/* Menu Button */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <button
+                className="flex items-center gap-2 p-2 text-foreground hover:text-muted-foreground transition-colors"
+                aria-label="Open menu"
+              >
+                <span className="text-[21px] font-medium leading-none">
+                  Menu
+                </span>
+                <div className="w-12 flex flex-col gap-[7px] items-center justify-center mt-[5px]">
+                  <span className="w-[20px] h-[2px] bg-current block"></span>
+                  <span className="w-[20px] h-[2px] bg-current block"></span>
+                </div>
+              </button>
+            </SheetTrigger>
+            <SheetContent
+              side="right"
+              className="w-full sm:w-[400px] p-0 flex flex-col h-full bg-white dark:bg-black"
             >
-              Blog
-            </Link>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[1.8rem] font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
-            >
-              Twitter
-            </a>
-            <a href="#" className="text-[1.8rem] font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Remix
-            </a>
-          </nav>
+              {/* Header with Close */}
+              <div className="flex items-center justify-end px-[25px] md:px-[9.09091vw] lg:px-[6.66667vw] py-6">
+                <SheetClose asChild>
+                  <button className="text-[1.6rem] text-black dark:text-white hover:opacity-60 transition-opacity">
+                    Close
+                  </button>
+                </SheetClose>
+              </div>
+
+              {/* Menu Content */}
+              <div className="flex-1 overflow-y-auto px-[25px] md:px-[9.09091vw] lg:px-[6.66667vw] pb-[40px] md:pb-[56px] pt-8">
+                <nav className="flex flex-col h-full justify-between text-right">
+                  {/* Main Links - Bigger */}
+                  <div className="flex flex-col gap-4">
+                    <Link
+                      to="/"
+                      className="text-[3.6rem] font-semibold [transition:background-position_600ms_cubic-bezier(0.45,0,0.55,1)] animate-in fade-in slide-in-from-right-4 bg-current [background-image:linear-gradient(90deg,rgba(203,48,223,0.5)_0%,rgba(254,44,85,0.5)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0]"
+                      style={{
+                        animationDelay: "0ms",
+                        animationFillMode: "backwards",
+                      }}
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      to="/about"
+                      className="text-[3.6rem] font-semibold [transition:background-position_600ms_cubic-bezier(0.45,0,0.55,1)] animate-in fade-in slide-in-from-right-4 bg-current [background-image:linear-gradient(90deg,rgba(203,48,223,0.5)_0%,rgba(254,44,85,0.5)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0]"
+                      style={{
+                        animationDelay: "150ms",
+                        animationFillMode: "backwards",
+                      }}
+                    >
+                      Our story
+                    </Link>
+                    <Link
+                      to="/contact"
+                      className="text-[3.6rem] font-semibold [transition:background-position_600ms_cubic-bezier(0.45,0,0.55,1)] animate-in fade-in slide-in-from-right-4 bg-current [background-image:linear-gradient(90deg,rgba(203,48,223,0.5)_0%,rgba(254,44,85,0.5)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0]"
+                      style={{
+                        animationDelay: "300ms",
+                        animationFillMode: "backwards",
+                      }}
+                    >
+                      Contact
+                    </Link>
+                    <Link
+                      to="/faq"
+                      className="text-[3.6rem] font-semibold [transition:background-position_600ms_cubic-bezier(0.45,0,0.55,1)] animate-in fade-in slide-in-from-right-4 bg-current [background-image:linear-gradient(90deg,rgba(203,48,223,0.5)_0%,rgba(254,44,85,0.5)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0]"
+                      style={{
+                        animationDelay: "450ms",
+                        animationFillMode: "backwards",
+                      }}
+                    >
+                      FAQ
+                    </Link>
+                  </div>
+
+                  {/* Secondary Links - Smaller */}
+                  <div className="flex flex-col gap-3 mt-12">
+                    <a
+                      href="mailto:hello@editorial.com"
+                      className="text-[1.6rem] [transition:background-position_600ms_cubic-bezier(0.45,0,0.55,1)] animate-in fade-in slide-in-from-right-4 bg-current [background-image:linear-gradient(90deg,rgba(203,48,223,0.5)_0%,rgba(254,44,85,0.5)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0]"
+                      style={{
+                        animationDelay: "600ms",
+                        animationFillMode: "backwards",
+                      }}
+                    >
+                      Email
+                    </a>
+                    <a
+                      href="https://facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[1.6rem] [transition:background-position_600ms_cubic-bezier(0.45,0,0.55,1)] animate-in fade-in slide-in-from-right-4 bg-current [background-image:linear-gradient(90deg,rgba(203,48,223,0.5)_0%,rgba(254,44,85,0.5)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0]"
+                      style={{
+                        animationDelay: "750ms",
+                        animationFillMode: "backwards",
+                      }}
+                    >
+                      Facebook
+                    </a>
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[1.6rem] [transition:background-position_600ms_cubic-bezier(0.45,0,0.55,1)] animate-in fade-in slide-in-from-right-4 bg-current [background-image:linear-gradient(90deg,rgba(203,48,223,0.5)_0%,rgba(254,44,85,0.5)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0]"
+                      style={{
+                        animationDelay: "900ms",
+                        animationFillMode: "backwards",
+                      }}
+                    >
+                      Instagram
+                    </a>
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[1.6rem] [transition:background-position_600ms_cubic-bezier(0.45,0,0.55,1)] animate-in fade-in slide-in-from-right-4 bg-current [background-image:linear-gradient(90deg,rgba(203,48,223,0.5)_0%,rgba(254,44,85,0.5)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent hover:bg-[position:0%_0]"
+                      style={{
+                        animationDelay: "1050ms",
+                        animationFillMode: "backwards",
+                      }}
+                    >
+                      Twitter
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

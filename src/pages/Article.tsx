@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   Article as ArticleWrapper,
   ArticleHeader,
@@ -61,18 +60,6 @@ const Article = () => {
       <Header />
 
       <ArticleWrapper>
-        <ArticleHero image={malmoHero} alt="Modern architecture in Malmö, Sweden" />
-
-        <div className="box-content max-w-[86.25rem] px-4 md:px-[calc(18vw-6.25rem)] mx-auto mt-8">
-          <Link
-            to="/blog"
-            className="inline-flex items-center text-[14px] font-medium text-muted-foreground hover:text-foreground transition-colors group"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-            Back to Stories
-          </Link>
-        </div>
-
         <ArticleHeader
           title="MLMO: Capturing Malmö's Architectural Renaissance"
           date="January 10, 2025"
@@ -82,6 +69,8 @@ const Article = () => {
             avatar: authorMarcus,
           }}
         />
+
+        <ArticleHero image={malmoHero} alt="Modern architecture in Malmö, Sweden" />
 
         <ArticleContainer>
           <TopShares
@@ -284,14 +273,7 @@ const Article = () => {
         <ArticleRelatedItems items={relatedArticles} />
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border mt-12">
-        <div className="mx-auto py-12" style={{ maxWidth: "86.25rem", padding: "2rem calc(18vw - 10rem)" }}>
-          <div className="text-center text-sm text-muted-foreground">
-            <p>© 2024 Editorial. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

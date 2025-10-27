@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Section from "@/components/Section";
 import ArticlePreview from "@/components/ArticlePreview";
 import BlogHighlight from "@/components/BlogHighlight";
@@ -16,31 +16,10 @@ import blog8 from "@/assets/blog-8.avif";
 import blog9 from "@/assets/blog-9.avif";
 import blog10 from "@/assets/blog-10.avif";
 import malmoHero from "@/assets/malmo/malmo-hero.jpg";
-import avatar1 from "@/assets/avatar-1.jpg";
-import avatar2 from "@/assets/avatar-2.jpg";
-import avatar3 from "@/assets/avatar-3.jpg";
-import avatar4 from "@/assets/avatar-4.jpg";
 
 const Blog = () => {
   const articlesRef = useRef<(HTMLElement | null)[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-
-  const tagColors: Record<string, string> = {
-    All: "hsl(217 100% 65%)",
-    Wellness: "hsl(320 98% 74%)",
-    Home: "hsl(27 100% 55%)",
-    Travel: "hsl(215 86% 70%)",
-    Food: "hsl(356 100% 56%)",
-    Fashion: "hsl(320 98% 74%)",
-    Lifestyle: "hsl(217 100% 65%)",
-    Creative: "hsl(27 100% 55%)",
-    Fitness: "hsl(356 100% 56%)",
-  };
-
-  const selectedCategoryStyle = {
-    bg: "hsl(217 100% 95%)",
-    text: "hsl(217 100% 65%)",
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -60,7 +39,7 @@ const Blog = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [selectedCategory]);
 
   const featuredArticle = {
     title: "MLMO: Capturing Malmö's Architectural Renaissance",
@@ -83,7 +62,7 @@ const Blog = () => {
       title: "Light and Shadow in Design",
       description: "How natural light transforms architectural spaces throughout the day.",
       image: blog3,
-      tag: "Home",
+      tag: "Wellness",
       slug: "mlmo-architectural-renaissance",
     },
     {
@@ -97,14 +76,14 @@ const Blog = () => {
       title: "Sustainable Building Design",
       description: "Eco-conscious architecture that respects the environment.",
       image: blog7,
-      tag: "Home",
+      tag: "Wellness",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Geometric Facades",
       description: "Bold angular designs that make powerful architectural statements.",
       image: blog8,
-      tag: "Home",
+      tag: "Fashion",
       slug: "mlmo-architectural-renaissance",
     },
   ];
@@ -148,28 +127,28 @@ const Blog = () => {
       title: "Concrete and Wood Harmony",
       description: "The perfect balance of industrial and natural materials.",
       image: blog6,
-      tag: "Home",
+      tag: "Food",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Sustainable Building Design",
       description: "Eco-conscious architecture that respects the environment.",
       image: blog7,
-      tag: "Home",
+      tag: "Wellness",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Geometric Facades",
       description: "Bold angular designs that make powerful architectural statements.",
       image: blog8,
-      tag: "Home",
+      tag: "Fashion",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Open Floor Plans",
       description: "Flexible living spaces that adapt to modern lifestyles.",
       image: blog9,
-      tag: "Home",
+      tag: "Lifestyle",
       slug: "mlmo-architectural-renaissance",
     },
     {
@@ -183,77 +162,77 @@ const Blog = () => {
       title: "Rooftop Gardens",
       description: "Bringing nature to elevated urban spaces.",
       image: blog1,
-      tag: "Home",
+      tag: "Travel",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Texture in Modern Design",
       description: "Layering materials for depth and visual interest.",
       image: blog2,
-      tag: "Home",
+      tag: "Fashion",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Indoor-Outdoor Living",
       description: "Seamless transitions between interior and exterior spaces.",
       image: blog3,
-      tag: "Home",
+      tag: "Travel",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Contemporary Kitchen Design",
       description: "Sleek, functional spaces for the modern home chef.",
       image: blog4,
-      tag: "Home",
+      tag: "Food",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Statement Staircases",
       description: "Sculptural elements that become the focal point of any space.",
       image: blog5,
-      tag: "Home",
+      tag: "Fashion",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Neutral Color Palettes",
       description: "Timeless tones that create calm, sophisticated interiors.",
       image: blog6,
-      tag: "Home",
+      tag: "Lifestyle",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Smart Home Integration",
       description: "Technology seamlessly woven into architectural design.",
       image: blog7,
-      tag: "Home",
+      tag: "Lifestyle",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Floating Architecture",
       description: "Cantilevered structures that defy gravity.",
       image: blog8,
-      tag: "Home",
+      tag: "Travel",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Minimalist Bathrooms",
       description: "Spa-like sanctuaries with clean, modern aesthetics.",
       image: blog9,
-      tag: "Home",
+      tag: "Wellness",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Courtyard Homes",
       description: "Private outdoor spaces at the heart of residential design.",
       image: blog10,
-      tag: "Home",
+      tag: "Travel",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Industrial Chic Interiors",
       description: "Exposed beams and raw materials create urban elegance.",
       image: blog1,
-      tag: "Home",
+      tag: "Food",
       slug: "mlmo-architectural-renaissance",
     },
     {
@@ -267,14 +246,14 @@ const Blog = () => {
       title: "Compact Living Solutions",
       description: "Maximizing small spaces through smart design.",
       image: blog3,
-      tag: "Home",
+      tag: "Lifestyle",
       slug: "mlmo-architectural-renaissance",
     },
     {
       title: "Architectural Lighting",
       description: "Illumination as a design element in modern homes.",
       image: blog4,
-      tag: "Home",
+      tag: "Food",
       slug: "mlmo-architectural-renaissance",
     },
   ];
@@ -358,8 +337,8 @@ const Blog = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] text-left transition-[background-position] duration-[400ms]">
-                  <span className="inline-block mb-[-0.3em] pb-[0.3em] bg-current [background-image:linear-gradient(90deg,hsl(217_100%_65%)_0%,hsl(320_98%_74%)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent group-hover:bg-[position:0%_0]">
+                <h2 className="font-sans font-semibold text-[2.2rem] md:text-[2.7rem] leading-[1.4] text-[hsl(var(--editorial-text))] text-left">
+                  <span className="inline-block mb-[-0.3em] pb-[0.3em] [transition:background-position_600ms_cubic-bezier(0.45,0,0.55,1)] bg-current [background-image:linear-gradient(90deg,rgba(203,48,223,0.5)_0%,rgba(254,44,85,0.5)_46%,hsl(var(--foreground))_54%,hsl(var(--foreground))_100%)] bg-[length:220%_100%] bg-[position:100%_0] bg-clip-text text-transparent group-hover:bg-[position:0%_0]">
                     {opinion.title}
                   </span>
                 </h2>
@@ -404,18 +383,11 @@ const Blog = () => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className="uppercase tracking-wide transition-colors"
-              style={{
-                display: "block",
-                padding: "0.5rem 1rem",
-                borderRadius: "0.6rem",
-                textDecoration: "none",
-                fontSize: "1.6rem",
-                lineHeight: "2rem",
-                fontWeight: 400,
-                backgroundColor: selectedCategory === category ? selectedCategoryStyle.bg : "transparent",
-                color: selectedCategory === category ? selectedCategoryStyle.text : "hsl(var(--foreground))",
-              }}
+              className={`uppercase tracking-wide text-[1.6rem] leading-[2rem] font-normal px-4 py-2 rounded-[0.6rem] transition-all duration-300 ${
+                selectedCategory === category
+                  ? "bg-[rgba(254,44,85,0.15)] text-[#FE2C55]"
+                  : "text-[hsl(var(--foreground))] hover:text-[#FE2C55]"
+              }`}
             >
               {category}
             </button>
@@ -448,14 +420,7 @@ const Blog = () => {
         </div>
       </Section>
 
-      {/* Footer */}
-      <footer className="border-t border-border mt-24">
-        <div className="mx-auto py-12" style={{ maxWidth: "86.25rem", padding: "2rem calc(18vw - 10rem)" }}>
-          <div className="text-center text-sm text-muted-foreground">
-            <p>© 2024 Editorial. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
