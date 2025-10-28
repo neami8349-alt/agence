@@ -78,7 +78,7 @@ const FAQ = () => {
 
       {/* Hero Section */}
       <Section>
-        <div className="text-center max-w-[80rem] mx-auto">
+        <div className="text-center w-full max-w-[80rem] mx-auto">
           <h1 className="text-[3.4rem] md:text-[4.2rem] lg:text-[6rem] font-semibold tracking-[-0.01em] leading-[1.2] md:leading-[1] mb-[2rem]">
             Frequently Asked Questions
           </h1>
@@ -90,18 +90,18 @@ const FAQ = () => {
 
       {/* FAQ Accordion */}
       <Section>
-        <div className="max-w-[80rem] mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+        <div className="max-w-[80rem] w-full mx-auto">
+          <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border border-border rounded-lg"
+                className="border-b border-border"
               >
-                <AccordionTrigger className="text-[1.8rem] md:text-[2rem] font-semibold text-left hover:no-underline py-6 px-6">
+                <AccordionTrigger className="text-[1.8rem] md:text-[2rem] font-medium text-left hover:no-underline py-6 w-full">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-[1.6rem] leading-[1.8] text-muted-foreground px-6 pb-6">
+                <AccordionContent className="text-[1.6rem] leading-[1.8] text-muted-foreground pb-6 w-full">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
