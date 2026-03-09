@@ -9,10 +9,10 @@ const stats = [
 ];
 
 const StatItem = ({ value, suffix, label }: { value: number; suffix: string; label: string }) => {
-  const count = useCounter(value, 2000);
+  const { count, ref } = useCounter(value, 2000);
 
   return (
-    <div className="text-center">
+    <div className="text-center" ref={ref as React.RefObject<HTMLDivElement>}>
       <div className="text-[3.5rem] sm:text-[4.5rem] font-bold text-primary leading-none">
         {count}{suffix}
       </div>
