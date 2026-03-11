@@ -1,7 +1,7 @@
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import AppearOnScroll from "@/components/AppearOnScroll";
 
-const WHATSAPP_NUMBER = "213XXXXXXXXX"; // Replace with actual number
+const WHATSAPP_NUMBER = "213781455270"; // Replace with actual number
 
 const ContactSection = () => {
   return (
@@ -26,8 +26,8 @@ const ContactSection = () => {
             {
               icon: Phone,
               title: "Téléphone",
-              info: "+213 XX XX XX XX",
-              href: "tel:+213XXXXXXXXXX",
+              info: "+213 7 81 45 52 70",
+              href: "tel:+213781455270",
             },
             {
               icon: MessageCircle,

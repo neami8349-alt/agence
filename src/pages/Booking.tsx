@@ -5,7 +5,7 @@ import Header from "@/components/TravelHeader";
 import Footer from "@/components/TravelFooter";
 import AppearOnScroll from "@/components/AppearOnScroll";
 
-const WHATSAPP_NUMBER = "213XXXXXXXXX"; // Replace with actual number
+const WHATSAPP_NUMBER = "213781455270"; // Replace with actual number
 
 const serviceTypes = [
   { value: "voyage", label: "🌍 Voyage Organisé" },
@@ -30,13 +30,20 @@ const Booking = () => {
     message: "",
   });
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (error) setError("");
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!navigator.onLine) {
+      setError("Vous êtes hors ligne. Vérifiez votre connexion internet et réessayez.");
+      return;
+    }
 
     const serviceLabel = serviceTypes.find((s) => s.value === form.type)?.label || form.type;
 
@@ -52,8 +59,14 @@ const Booking = () => {
 💬 *Message:* ${form.message}`;
 
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    window.open(waUrl, "_blank");
-    setSent(true);
+
+    const newWindow = window.open(waUrl, "_blank");
+    if (newWindow) {
+      setSent(true);
+    } else {
+      // popup blocked or failed to open
+      setError("Impossible d'ouvrir WhatsApp. Veuillez autoriser les pop-ups ou réessayer.");
+    }
   };
 
   if (sent) {
@@ -244,6 +257,11 @@ const Booking = () => {
               </div>
 
               {/* Submit */}
+              {error && (
+                <p className="text-[1.2rem] text-red-500 text-center">
+                  {error}
+                </p>
+              )}
               <button
                 type="submit"
                 className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-2xl text-[1.6rem] font-bold hover:opacity-90 transition-opacity"
